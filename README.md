@@ -1,4 +1,8 @@
 
+# Repozitorijos klonavimas
+
+git clone REPOZITORIJOS_ADRESAS
+
 # Klavišų kombinacijos VSCode:
 
 WIN             MAC                 VEIKSMAS  
