@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lentelės</title>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            /* width - Pločio nurodymas */
+            width: 800px;
+        }
+
+        td {
+            border: 1px solid black;
+        }
+
+        th {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- table - Lentelės elementas -->
+    <table>
+        <thead>
+            <tr>
+                <!-- th - table heading -->
+                <th>Pirmas stulpelis</th>
+                <th>Antras stulpelis</th>
+                <th>Trečias stulpelis</th>
+                <th>Ketvirtas stulpelis</th>
+                <th>Penktas stulpelis</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- tr (table row) - lentelės eilutės žymėjimas -->
+            <tr>
+                <!-- td (table data) - lentelės stulpelio žymėjimas -->
+                 <!-- colspan - nurodo kiek stulpelių vietos turėtų užimti td elementas -->
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td colspan="2">4</td>
+            </tr>
+            <tr>
+                <!-- td (table data) - lentelės stulpelio žymėjimas -->
+                <td rowspan="3">1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <!-- td (table data) - lentelės stulpelio žymėjimas -->
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <!-- td (table data) - lentelės stulpelio žymėjimas -->
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <!-- Lentelės apačioje priskiriamas turinys -->
+        </tfoot>
+    </table>
+    
+    <!-- Lentelės generavimas naudojant emmet: -->
+    <!-- table>tbody>tr*4>td*5 -->
+</body>
+</html>

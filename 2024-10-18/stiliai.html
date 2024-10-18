@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stilius</title>
+    
+    <!-- Internal stiliaus priskyrimas: -->
+    <style>
+        /* Selektorius: h2 (elemento pavadinimas) */
+        h2 {
+            color: blue;
+        }
+
+        /* Klasės selektorius yra žymimas tašku */
+        .raudona {
+            color: red;
+        }
+
+        .tamsiai-zalia {
+            color: rgb(58, 212, 11); 
+            font-weight: normal;
+        }
+
+        .blokelis {
+            color: white;
+            /* Fono spalvos priskyrimas */
+            background-color: black;
+        }
+
+        .krastines-blokelis {
+            /* Savybė border nurodo kraštinės priskyrimą */
+            /* trys perduodamos reikšmės: storis stilius ir spalva */
+            /* solid = vientisa kraštinė */
+            border: 1px solid black;
+        }
+
+        .tekstas-centre {
+            /* text-align savybė centruoja tekstą */
+            /* galimi variantai: left, right, center, justify */
+            text-align: center;
+        }
+    </style>
+
+    <!-- Išorinio (external) stiliaus priskyrimas -->
+    <link rel="stylesheet" href="stilius.css">
+</head>
+<body>
+    <!-- CSS Savybė "color" keičia šrifto spalvą -->
+    <!-- CSS priskyrimas naudojant inline stilių: -->
+    <!-- Spalvų kodai: 
+         spalvos arba atspalvio pavadinimas
+         hex #000000 (juoda) #FFFFFF (balta)
+         hwb
+         hsla
+         rgb
+         rgba
+    -->
+    <h1 style="color: rgb(84, 186, 99)">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam, recusandae.</h1>
+    <h2>ipsum dolor sit amet consectetur adipisicing elit. Dolorem, maxime?</h2>
+    <h2 class="raudona">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, maxime?</h2>
+    <h2 class="tamsiai-zalia">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, maxime?</h2>
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, maxime?</h2>
+    <h2 class="raudona">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, maxime?</h2>
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, maxime?</h2>
+    <h2 class="raudona">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, maxime?</h2>
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, maxime?</h2>
+    <h2 class="tamsiai-zalia">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, maxime?</h2>
+    <h2 class="tamsiai-zalia">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, maxime?</h2>
+    <p class="blokelis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, repellendus deserunt minus optio autem voluptatum aliquam dolorem illo iure vitae beatae nisi odio voluptates iusto maxime necessitatibus doloremque ullam consequatur? Quia alias eius ut vitae eos fuga incidunt molestiae. Ut adipisci at voluptatibus sapiente veniam, ratione culpa totam sit fuga!</p>
+    <p class="krastines-blokelis">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea rem esse quisquam illum accusamus a nostrum ullam, libero vero labore architecto hic, delectus incidunt recusandae tenetur non similique eligendi quo eos ipsum voluptatum. Perspiciatis ex harum quae ad porro, pariatur veniam praesentium quibusdam, esse laudantium, dolores voluptates iste repellendus unde!</p>
+    <p class="tekstas-centre">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel molestiae earum ea sequi fugit necessitatibus saepe sed, sunt a. Inventore, eum, ea magni quae alias nihil necessitatibus magnam officiis nobis eveniet minima quibusdam reiciendis porro eos nemo quisquam sunt blanditiis error architecto accusantium illum labore ad beatae. Error, non voluptates!</p>
+</body>
+</html>
