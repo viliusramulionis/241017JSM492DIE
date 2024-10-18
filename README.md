@@ -25,6 +25,7 @@ shift+alt+up    |   shift+alt+up    kopijuoja pasirinktą eilutę į viršų
 
 shift+alt+down  |   shift+alt+down  kopijuoja pasirinktą eilutę į apačią
 
+ctrl + /        |   cmd + /         komentaro įterpimas
 
 # Naudojimasis terminalu:
 
