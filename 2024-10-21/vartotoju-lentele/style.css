@@ -1,0 +1,31 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: rgb(231, 231, 231);
+}
+
+table {
+    width: 1100px;
+    border-collapse: collapse;
+    /* auto reikšmė galima jeigu turime fiksuotą plotį arba aukštį */
+    /* auto reikšmė būtų (ekrano arba tėvinio elemento plotis - plotis) / 2 */
+    margin: 100px auto;
+}
+
+th {
+    text-align: left;
+    background-color: rgb(110, 110, 238);
+    color: white;
+}
+
+tbody tr {
+    background-color: white;
+}
+
+tr {
+    height: 60px;
+}
+
+.first-column {
+    /* padding: 0 0 0 50px; */
+    padding-left: 50px;
+}

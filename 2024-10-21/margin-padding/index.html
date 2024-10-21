@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin ir Padding</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .blue {
+            background-color: blueviolet;
+        }
+
+        .margin-box {
+            width: 200px;
+            height: 200px;
+            background-color: bisque;
+            margin: 50px;
+        }
+
+        .margin-bottom-30 {
+            /* Norodomas atsitraukimas iš visų keturių kraštų */
+            /* margin: 50px; */
+
+            /* Norint nurodyti atsistūmimą iš vienos pusės naudojamos variacijos */
+            /* margin-bottom - iš apačios */
+            /* margin-top - iš viršaus */
+            /* margin-left - iš kairės */
+            /* margin-right - iš dešinės */
+            margin-bottom: 30px; 
+        }
+
+        .margin-box-top {
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            margin-top: 51px;
+        }
+
+        .margin-variations {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            /* Bendrinė reikšmė visoms keturioms kryptims: top, left, right, bottom */
+            /* margin: 50px; */
+            /* Jeigu norime atitraukti dėžutę per:
+            20px iš viršaus 
+            30px iš dešinės
+            60px iš apačios
+            100px iš kairės 
+            */
+            /* margin: 20px 30px 60px 100px; */
+            /* Toks pats aprašymas nurodant kryptis: */
+            /* margin-top: 20px;
+            margin-right: 30px;
+            margin-bottom: 60px;
+            margin-left: 100px; */
+            
+            /* Jeigu norime atitraukti blokelį per:
+            30px iš viršaus, 
+            50px iš kairės ir dešinės
+            60px iš apačios 
+            */
+            /* margin: 30px 50px 60px; */
+            /* Kai atitraukimas iš kairės ir dešinės pusės yra vienodas nurodomos trys reikšmės */
+        
+            /* 
+            Jeigu norime atitraukti blokelį per:
+            50px iš viršaus ir apačios
+            100px iš kairės ir dešinės
+            */
+            margin: 50px 100px;
+        }
+        
+        .padding-box {
+            background-color: chocolate;
+            width: 200px;
+            height: 200px;
+            /* Padding savybei galioja tokios pačios variacijos kaip ir margin savybeio */
+            padding: 20px;
+
+            /* Norint, jog padding ir border dydžiai būtų įskaičiuoti į bendrą plotį ir aukštį */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="blue">
+        <div class="margin-box"></div>
+    </div> -->
+    <p class="margin-bottom-30">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima harum quaerat iste dicta voluptate adipisci eum, ratione facilis doloremque cupiditate veritatis atque rem ipsam optio sit eveniet voluptas mollitia, animi quae saepe ipsum doloribus laboriosam ut! Molestiae iure culpa autem perspiciatis labore ratione, placeat at saepe tempora quo earum ipsam!</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima harum quaerat iste dicta voluptate adipisci eum, ratione facilis doloremque cupiditate veritatis atque rem ipsam optio sit eveniet voluptas mollitia, animi quae saepe ipsum doloribus laboriosam ut! Molestiae iure culpa autem perspiciatis labore ratione, placeat at saepe tempora quo earum ipsam!</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima harum quaerat iste dicta voluptate adipisci eum, ratione facilis doloremque cupiditate veritatis atque rem ipsam optio sit eveniet voluptas mollitia, animi quae saepe ipsum doloribus laboriosam ut! Molestiae iure culpa autem perspiciatis labore ratione, placeat at saepe tempora quo earum ipsam!</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima harum quaerat iste dicta voluptate adipisci eum, ratione facilis doloremque cupiditate veritatis atque rem ipsam optio sit eveniet voluptas mollitia, animi quae saepe ipsum doloribus laboriosam ut! Molestiae iure culpa autem perspiciatis labore ratione, placeat at saepe tempora quo earum ipsam!</p>
+    <div class="margin-box"></div>
+    <div class="margin-box-top"></div>
+    <div class="margin-variations">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, veniam.</div>
+    <div class="padding-box">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id, exercitationem.</div>
+</body>
+</html>
