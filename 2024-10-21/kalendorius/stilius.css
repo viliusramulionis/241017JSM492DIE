@@ -1,0 +1,49 @@
+body {
+    /* Šrifto priskyrimas: */
+    font-family: Arial, Helvetica, sans-serif;  
+    /* Teksto lygiavimas taipogi paveldimas */
+    /* text-align savybė nustato horizontalų lygiavimą */
+    text-align: center; 
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: black;
+    color: white;
+}
+
+/* .week-days {
+    background-color: gray;
+} */
+
+/* html body table thead tr td {
+    background-color: gray;
+} */
+
+thead td {
+    background-color: #cccccc;
+    width: 26px;
+}
+
+tbody {
+    font-weight: bold;
+}
+
+td {
+    height: 26px;
+    /* Vertikalaus lygiavimo nustatymas (galioja tik lentelėms) */
+    /* Lygiavimas į viršų */
+    /* vertical-align: top;  */
+    /* Lygiavimas per centrą */
+    /* vertical-align: center; */
+    /* Lygiavimas į apačią: */
+    /* vertical-align: bottom; */
+}
+
+.weekend {
+    color: #595959;
+}
