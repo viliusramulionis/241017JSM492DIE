@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuotraukos</title>
+    <style>
+        .maza-nuotrauka {
+            width: 250px;
+            height: 500px;
+        }
+
+        .korekcija {
+            /* Užpildo nuotrauką pagal pasirinktą plotį ir aukštį: */
+            object-fit: cover;
+
+            /* Patalpina pilną nuotrauką pasirinktuose išmatavimuose: */
+            object-fit: contain;
+            /* Pozicijos nurodymas kur turėtų būti lygiuojama nuotrauka: */
+            /* Galimos reikšmės: top, left, bottom, right, center */
+            object-position: center; 
+        }
+    </style>
+</head>
+<body>
+    <!-- src (source) - nurodomas nuotraukos adresas -->
+    <!-- alt (alternative) - nurodomas alternatyvus tekstas nuotraukai -->
+    <!-- src reikyšmė gali būti išorinis adresas: -->
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIs55YYqbZw5eV_7sCXa_OCmb-raPssT_olw&s" alt="">
+    
+    <!-- alt atribute įrašytas tekstas atvaizduojamas kai nepavysta surasti jos failo -->
+    <img src="neegzistuojanti-nuotrauka.webp" alt="Nuotrauka kurioje vaizduojamas gražus peizažas">
+
+    <!-- arba nuotrauka kuri patalpinta kompiuteryje -->
+    <!-- atributas width nurodo plotį pikseliais arba procentais prirašius % ženklą -->
+    <!-- height = nuotraukos aukštis, žymimas taip pat kaip width -->
+    <img src="nuotrauka.webp" alt="" width="500" height="1000">
+
+    <!-- Pločio ir aukščio priskyrimas naudojant CSS stilių -->
+    <img src="nuotrauka.webp" alt="" class="maza-nuotrauka">
+
+    <!-- Pločio ir aukščio priskyrimas naudojant CSS stilių -->
+    <img src="nuotrauka.webp" alt="" class="maza-nuotrauka korekcija">
+
+
+</body>
+</html>
