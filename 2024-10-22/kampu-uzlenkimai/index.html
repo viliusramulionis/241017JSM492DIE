@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kampų užlenkimai</title>
+    <style>
+        .dezute {
+            width: 500px;
+            height: 300px;
+            margin: 15px auto;
+        }
+
+        .violetine {
+            background-color: purple;
+        }
+
+        .oranzine {
+            background-color: orange;
+        }
+
+        .melyna {
+            background-color: blue;
+        }
+
+        .uzlenkti-kampai {
+            border-radius: 15px;
+        }
+
+        .uzlenktas-kv-kampas {
+            /* Kiekvieno kampo užlenkimas atskirai */
+            border-top-left-radius: 50px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 80px;
+            border-bottom-left-radius: 100px;
+            
+            /* Norint atlikti tą patį vienoje eilutėje: */
+            border-radius: 50px 20px 80px 100px;
+        }
+
+        .apskritimas {
+            height: 500px;
+            border-radius: 50%;
+        }
+
+        .nuotrauka {
+            width: 554px;
+            margin: 0 auto;
+            /* Norint keisti elemento tipą į block: */
+            display: block;
+            /* Pertekliaus paslėpimas */
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="dezute violetine uzlenkti-kampai"></div>
+    <div class="dezute oranzine uzlenktas-kv-kampas"></div>
+    <div class="dezute melyna apskritimas"></div>
+
+    <div class="nuotrauka uzlenkti-kampai">
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSC4DtHTGprsp7K8u0ZlfSDmIDplvQYH5vniT0I3rpcl6wqBh8b" alt="">
+    </div>
+</body>
+</html>
