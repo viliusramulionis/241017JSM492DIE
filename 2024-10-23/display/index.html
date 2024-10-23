@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <style>
+        strong {
+            display: block;
+            padding: 50px 0;
+            background-color: black;
+            color: white;
+        }
+
+        em {
+            display: inline-block;
+            padding: 40px 20px;
+            background-color: pink;
+        }
+
+        .dezutes {
+            display: flex;
+            /* Lygiavimas horizontaliai: */
+            /* flex-start - kaire puse */
+            /* flex-end - desine */
+            /* center */
+            /* space-between - islygiavimas palei krastus (justify) */
+            /* space-around - paliekami pusiniai tarpai nuo krastu */
+            /* space-evenly - paliekami vienodi tarpai tarp krastu */
+            justify-content: center;
+        }
+
+        .dezute {
+            width: 300px;
+            height: 300px; 
+        }
+
+        .maza-dezute {
+            width: 150px;
+            height: 150px;
+        }
+
+        .violetine {
+            background-color: purple;
+        }
+
+        .oranzine {
+            background-color: orange;
+        }
+
+        .raudona {
+            background-color: red;
+        }
+
+        .lygiavimas-vertikaliai {
+            display: flex;
+            margin-top: 50px;
+            align-items: center;
+            height: 500px;
+            background-color: black;
+        }
+
+        .lygiavimas-vertikaliai-nevienodos-dezutes {
+            display: flex;
+            margin-top: 50px;
+            align-items: center;
+            height: 500px;
+            background-color: black;
+        }
+
+        .lygiavimas-vertikaliai-nevienodos-dezutes div {
+            width: 300px;
+            color: white;
+            padding: 30px;
+        }
+
+        .stulpelis {
+            display: flex;
+            background-color: black;
+            margin-top: 50px;
+        }
+
+        .per-daug-dezuciu {
+            margin-top: 50px;
+            flex-wrap:wrap;
+            /* Tarpelių nustatymas: */
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <strong>Lorem ipsum dolor sit amet</strong> 
+        <em>consectetur adipisicing elit. Enim, commodi!</em>
+    </p>
+    <!-- Flex ir justify content pavyzdys -->
+    <div class="dezutes">
+        <div class="dezute violetine"></div>
+        <div class="dezute oranzine"></div>
+    </div>
+    <!-- Align items pavyzdys -->
+    <div class="lygiavimas-vertikaliai">
+        <div class="maza-dezute violetine"></div>
+        <div class="maza-dezute oranzine"></div>
+        <div class="maza-dezute raudona"></div>
+    </div>
+    <!-- Align items pavyzdys su ne vienodu aukščiu -->
+    <div class="lygiavimas-vertikaliai-nevienodos-dezutes">
+        <div class="violetine">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus placeat molestiae temporibus eveniet laborum saepe.</div>
+        <div class="oranzine">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur ea recusandae quam velit, facere quo architecto voluptatum dicta nulla cum, a pariatur sint tempora, debitis cumque omnis molestiae veritatis itaque.</div>
+        <div class="raudona">Lorem ipsum dolor sit amet.</div>
+    </div>
+    <!-- Flex direction pavyzdys: -->
+    <div class="stulpelis">
+        <div class="dezute violetine">A</div>
+        <div class="dezute oranzine">B</div>
+    </div>
+
+    <!-- Ką daryti su daug elementų? -->
+    <div class="dezutes per-daug-dezuciu">
+        <div class="dezute violetine"></div>
+        <div class="dezute oranzine"></div>
+        <div class="dezute raudona"></div>
+        <div class="dezute violetine"></div>
+        <div class="dezute oranzine"></div>
+        <div class="dezute raudona"></div>
+        <div class="dezute violetine"></div>
+        <div class="dezute oranzine"></div>
+        <div class="dezute raudona"></div>
+        <div class="dezute violetine"></div>
+        <div class="dezute oranzine"></div>
+        <div class="dezute raudona"></div>
+        <div class="dezute violetine"></div>
+        <div class="dezute oranzine"></div>
+        <div class="dezute raudona"></div>
+        <div class="dezute violetine"></div>
+        <div class="dezute oranzine"></div>
+        <div class="dezute raudona"></div>
+    </div>
+</body>
+</html>
