@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <style>
+        /* Visų elementų selektorius: */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Rubik", sans-serif;
+            min-height: 100vh;
+            /* Reset */
+            margin: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: #faf8f0;
+        }
+
+        .game {
+            display: flex;
+            flex-wrap: wrap;
+            width: 475px;
+            /* margin: 0 auto; */
+            background-color: #9c8b7c;
+            gap: 15px;
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .block {
+            width: 100px;
+            height: 100px;
+            background-color: #bdac97;
+            border-radius: 10px;
+            font-size: 32px;
+            font-weight: 700;
+            /* Norint išlygiuoti tekstą blokelyje: */
+            /* text-align: center;
+            line-height: 100px; */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: white;
+        }
+
+        .two {
+            background-color: #eee4da;
+            color: #756452;
+        }
+
+        .four {
+            background-color: #ebd8b6;
+            color: #756452;
+        }
+
+        .eight {
+            background-color: #f2b177;
+        }
+
+        .sixteen {
+            background-color: #f69360;
+        }
+
+        .thirtytwo {
+            background-color: #f78165;
+        }
+
+        .sixtyfour {
+            background-color: #f66240;
+        }
+    </style>
+</head>
+<body>
+    <div class="game">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block two">2</div>
+        <div class="block"></div>
+        <div class="block two">2</div>
+        <div class="block eight">8</div>
+        <div class="block sixteen">16</div>
+        <div class="block eight">8</div>
+        <div class="block"></div>
+        <div class="block sixteen">16</div>
+        <div class="block sixtyfour">64</div>
+        <div class="block four">4</div>
+        <div class="block sixteen">16</div>
+        <div class="block thirtytwo">32</div>
+        <div class="block eight">8</div>
+    </div>
+</body>
+</html>
