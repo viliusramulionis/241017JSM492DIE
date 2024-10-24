@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color:aqua;
+
+    /* Nuotrauka gali būti išorinė patalpinant jos adresą */
+    /* background-image: url(https://images.squarespace-cdn.com/content/v1/54822a56e4b0b30bd821480c/4e17ec01-850d-4fda-a446-e68ff71854ba/German+Shepherds+dans+pet+care.jpeg); */
+    
+    /* Lokaliai išsaugotos nuotraukos patalpinimas fone: */
+    background-image: url(../images/nuotrauka.jpeg);
+    /* Fono kartojimo ašies nurodymas: */
+    /* repeat priskirta reikšmė pagal nutylėjimą (default) */
+    /* background-repeat: repeat; */
+
+    /* Nuotraukos kartojimas x ašyje: */
+    /* background-repeat: repeat-x; */
+
+    /* Nuotraukos kartojimas Y ašyje: */
+    /* background-repeat: repeat-y; */
+
+    /* Nuotraukos pakartojimo išjungimas: */
+    background-repeat: no-repeat;
+
+    /* Fono nuotraukos pozicijos nustatymas: */
+
+    /* Pozicijos nustatymas naudojant pikselius: */
+    /* reikšmės: pirma kairė, antra viršus */
+    /* background-position: 50px 150px; */
+
+    /* background-position: -50px -150px; */
+
+    /* background-position: 500px 200px; */
+
+    /* Pozicijos nustatymas procentais: */
+    /* background-position: 20% 10%; */
+
+    /* Galimos žodinės reikšmės: left top right bottom center */
+    /* background-position: center bottom; */
+    /* background-position: top right; */
+    /* background-position: bottom right; */
+
+    background-position: center;
+
+    /* Nuotraukos dydžio priskyrimas: */
+    /* background-size: 2000px; */
+
+    /* background-size: 200%; */
+
+    /* background-size: contain; */
+
+    background-size: cover;
+    
+    /* Visų savybių priskyrimas vienoje eilutėje */
+    background: aqua url(../images/nuotrauka.jpeg) no-repeat center / cover;
+}

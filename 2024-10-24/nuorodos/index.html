@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuorodos</title>
+    <style>
+        a {
+            color: red;
+        }
+
+        a:visited {
+            color: purple;
+        } 
+
+        /* Hover reiškia: kuomet ant elemento užvedama */
+        /* Hover būsena Istate) galioja visiems elementams */
+        a:hover {
+            color: orange;
+            font-size: 30px;
+            font-weight: bold;
+            /* ir t.t. */
+        }
+
+        /* Kuomet įvykdomas paspaudimas: */
+        a:active {
+            color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <!-- a (anchor) - nuoroda -->
+    <!-- https://google.com - išorinė nuoroda (external link) -->
+    <a href="https://google.com">Google</a>
+
+    <!-- Vidinė nuoroda (internal link) -->
+    <a href="kontaktai.html">Kontaktų puslapis</a>
+
+    <a href="apie-mus.html">Apie Mus</a>
+
+    <a href="https://neegzistuojantis.lt">Dar nematyta nuoroda</a>
+
+    <a href="../favicon/index.html">FavIcon pavyzdys</a>
+
+    <a href="../../2024-10-23/sprendimai/index.html">2048</a>
+</body>
+</html>

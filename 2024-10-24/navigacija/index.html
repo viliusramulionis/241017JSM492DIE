@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigacija</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Reset pritaikymas: */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        header {
+            background-color: black;
+            padding: 10px 0;
+        }
+
+        header nav ul {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+
+            /* Norint tekstą paversti į mažąsias raides: */
+            text-transform: lowercase;
+            /* Norint, jog žodžiai būtų iš didžiųjų raidžių: */
+            text-transform: capitalize;
+            /* Norint paversti tekstą į didžiąsias raides */
+            text-transform: uppercase;
+        }
+
+        .container {
+            width: 1100px;
+            margin: 0 auto;
+        }
+
+        .header-contents {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer {
+            background-color: black;
+        }
+
+        footer nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px 0;
+        }
+
+        footer nav a {
+            color: rgb(212, 212, 212);
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header-contents">
+                <!-- Logotipas -->
+                <a href="">
+                    <img src="logo.png" alt="Logo" width="40" />
+                </a>
+                <!-- Navigacija: -->
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="">Titulinis</a>
+                        </li>
+                        <li>
+                            <a href="">apie mus</a>
+                        </li>
+                        <li>
+                            <a href="">kontaktai</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <!-- Puslapio turinys -->
+            <h1>Hello World</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis fugiat harum voluptas soluta totam minima porro doloribus aliquam aut ullam magni impedit deleniti optio ipsam voluptate quod hic, est eius atque. Inventore eum maiores, debitis deleniti eveniet ipsa excepturi labore quidem distinctio saepe beatae rem dolorum tempore repudiandae sequi? Culpa.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis fugiat harum voluptas soluta totam minima porro doloribus aliquam aut ullam magni impedit deleniti optio ipsam voluptate quod hic, est eius atque. Inventore eum maiores, debitis deleniti eveniet ipsa excepturi labore quidem distinctio saepe beatae rem dolorum tempore repudiandae sequi? Culpa.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis fugiat harum voluptas soluta totam minima porro doloribus aliquam aut ullam magni impedit deleniti optio ipsam voluptate quod hic, est eius atque. Inventore eum maiores, debitis deleniti eveniet ipsa excepturi labore quidem distinctio saepe beatae rem dolorum tempore repudiandae sequi? Culpa.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis fugiat harum voluptas soluta totam minima porro doloribus aliquam aut ullam magni impedit deleniti optio ipsam voluptate quod hic, est eius atque. Inventore eum maiores, debitis deleniti eveniet ipsa excepturi labore quidem distinctio saepe beatae rem dolorum tempore repudiandae sequi? Culpa.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis fugiat harum voluptas soluta totam minima porro doloribus aliquam aut ullam magni impedit deleniti optio ipsam voluptate quod hic, est eius atque. Inventore eum maiores, debitis deleniti eveniet ipsa excepturi labore quidem distinctio saepe beatae rem dolorum tempore repudiandae sequi? Culpa.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis fugiat harum voluptas soluta totam minima porro doloribus aliquam aut ullam magni impedit deleniti optio ipsam voluptate quod hic, est eius atque. Inventore eum maiores, debitis deleniti eveniet ipsa excepturi labore quidem distinctio saepe beatae rem dolorum tempore repudiandae sequi? Culpa.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis fugiat harum voluptas soluta totam minima porro doloribus aliquam aut ullam magni impedit deleniti optio ipsam voluptate quod hic, est eius atque. Inventore eum maiores, debitis deleniti eveniet ipsa excepturi labore quidem distinctio saepe beatae rem dolorum tempore repudiandae sequi? Culpa.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis fugiat harum voluptas soluta totam minima porro doloribus aliquam aut ullam magni impedit deleniti optio ipsam voluptate quod hic, est eius atque. Inventore eum maiores, debitis deleniti eveniet ipsa excepturi labore quidem distinctio saepe beatae rem dolorum tempore repudiandae sequi? Culpa.</p>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <!-- Puslapio apačia -->
+            <nav>
+                <ul>
+                    <li>
+                        <a href="">Titulinis</a>
+                    </li>
+                    <li>
+                        <a href="">Apie Mus</a>
+                    </li>
+                    <li>
+                        <a href="">Kontaktai</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+
+</html>
