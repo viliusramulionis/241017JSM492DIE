@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .laukelis {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 7px 10px;
+            border: 1px solid rgb(177, 177, 177);
+        }
+
+        input:focus {
+            background-color: rgb(233, 248, 255);
+            /* Juodos kraštinės panaikinimas */
+            outline: none;
+        }
+
+        textarea {
+            width: 100%;
+            height: 300px;
+            /* Norint neleisti vartotojui keisti elemento dydžio: */
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Formos elemente talpinami visi laukeliai -->
+    <form>
+        <div class="laukelis">
+            <label>Įveskite savo vardą:</label>
+            <!-- type atributas nurodo laukelio turinio tipą -->
+            <!-- placeholder atributas nurodo tekstą atvaizduojamą laukelyje iki vartotojui jį pildant -->
+            <input type="text" placeholder="Vardenis Pavardenis" required>
+        </div>
+        <div class="laukelis">
+            <!-- priskiriant tipą email naršyklė tikrina ar įvesti teisingi duomenys -->
+            <label>Įveskite savo el. pašto adresą:</label>
+            <input type="email" placeholder="test@gmail.com" required>
+        </div>
+        <div class="laukelis">
+            <label>Įveskite savo slaptažodį:</label>
+            <input type="password" required>
+        </div>
+        <div class="laukelis">
+            <label>Įveskite savo gimimo datą:</label>
+            <input type="date" required>
+        </div>
+        <div class="laukelis">
+            <label>Įveskite pageidaujamą kiekį:</label>
+            <!-- value atributas galimas prie visų input elementų -->
+            <input type="number" required min="5" max="15" value="5">
+        </div>
+        <div class="laukelis" style="display: flex; align-items: center">
+            <!-- <label>
+                <input type="checkbox" style="width: 20px">
+                Sutinku su pirkimo taisyklėmis
+            </label> -->
+            
+            <input id="agree" type="checkbox" style="width: 20px">
+            <label for="agree">Sutinku su pirkimo taisyklėmis</label>
+        </div>
+
+        <div class="laukelis">
+            <!-- Select elementas yra naudojamas vartotojui pateikti kelis pasirinkimų variantus: -->
+            <label>Pasirinkite jus dominančią temą:</label>
+            <select>
+                <option>Sąskaitos</option>
+                <option>Sutartys</option>
+                <option>Verslo klientams</option>
+                <option>Paslaugų nutraukimas</option>
+            </select>
+        </div>
+
+        <div class="laukelis">
+            <label>Įveskite komentarą:</label>
+            <textarea></textarea>
+        </div>
+        
+        <!-- Mygtuko kūrimas -->
+        <button type="reset">Išvalyti formą</button>
+        <button>Siųsti</button>
+    </form>
+</body>
+</html>
