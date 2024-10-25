@@ -27,6 +27,8 @@ shift+alt+down  |   shift+alt+down  kopijuoja pasirinktą eilutę į apačią
 
 ctrl + /        |   cmd + /         komentaro įterpimas
 
+shift + tab     |   shift + tab     pastumia kodą į kairę pusę
+
 # Naudojimasis terminalu:
 
   

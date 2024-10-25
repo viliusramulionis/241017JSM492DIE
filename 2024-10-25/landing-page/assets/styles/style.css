@@ -1,0 +1,119 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", serif;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    /* Maksimalaus pločio priskyrimas */
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-space-between {
+    justify-content: space-between;
+}
+
+.half {
+    width: 50%;
+}
+
+header {
+    padding: 15px 0;
+}
+
+header .logo img {
+    filter: invert();
+    width: 50px;
+}
+
+header nav ul {
+    gap: 20px;
+}
+
+section {
+    color: white;
+    background-color: black;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section .container {
+    gap: 50px;
+    min-height: 100vh;
+}
+
+/* section.background-one {
+    background-image: url(../images/1.jpg);
+}
+
+section.background-two {
+    background-image: url(../images/2.jpg);
+}
+
+section.background-three {
+    background-image: url(../images/3.jpg);
+}
+
+section.background-four {
+    background-image: url(../images/4.jpg);
+} */
+
+/* section.background-two .container,
+section.background-four .container {
+    flex-direction: row-reverse;
+} */
+
+/* id atributo selektorius: */
+#home {
+    background-image: url(../images/1.jpg);
+}
+
+#about {
+    background-image: url(../images/2.jpg);
+}
+
+#products {
+    background-image: url(../images/3.jpg);
+}
+
+#contact {
+    background-image: url(../images/4.jpg);
+}
+
+#about .container,
+#contact .container {
+    flex-direction: row-reverse;
+}
