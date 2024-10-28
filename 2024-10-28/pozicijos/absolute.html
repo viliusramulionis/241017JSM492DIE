@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pozicijos</title>
+    <style>
+        .black-box {
+            /* Realityvaus elemento priskyrimas */
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background-color: black;
+            margin: 0 auto;
+            color: white;
+        }
+
+        .box {
+            width: 250px;
+            height: 250px;
+        }
+
+        .purple {
+            background-color: purple;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .tomato {
+            background-color: tomato;
+        }
+
+        .position-1 {
+            position: absolute;
+            top: 50px;
+            left: 160px;
+
+            /* Jeigu position savybės reikšmė nėra static tuomet galime naudoti šias savybes: */
+            /* top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0; */
+        }
+
+        .position-2 {
+            position: absolute;
+            bottom: 0;
+        }
+
+        .position-3 {
+            position: absolute;
+            bottom: 50px;
+            right: 160px;
+            /* Išdėstymo priskyrimas (kuris elementas turėtų būti virš kurio) */
+            z-index: 1;
+        }
+
+        .position-4 {
+            position: absolute;
+            left: 20px;
+            top: 100px;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque maiores voluptate magni, ex aliquid, aliquam minima illo ab, distinctio laborum ad et amet tempora? Sunt, iure sapiente impedit sed quisquam beatae magni quasi nihil reprehenderit, dolorem commodi totam corrupti! Molestiae voluptatum eum, est eveniet repellat nesciunt perferendis quo aliquam dicta rem molestias numquam non corporis exercitationem, voluptatem facere saepe error! Voluptatem exercitationem nulla totam optio dicta maiores aspernatur natus eligendi. Odit, illo! Ut adipisci obcaecati laudantium atque corrupti dicta harum sequi deleniti vel nesciunt culpa laborum dolores maiores at architecto consequuntur rem neque velit fugiat cum nam, aperiam labore quidem ipsum? Optio debitis, quam excepturi architecto nulla tempore molestias facilis. Quae ipsa voluptate molestiae vitae recusandae nihil enim blanditiis fugit ipsum doloribus modi distinctio, similique deserunt natus doloremque asperiores porro sequi corporis commodi deleniti inventore a harum sed! Voluptas voluptatem blanditiis aliquam eaque adipisci eos totam dolores cupiditate error, est perferendis nobis ut, illo consequuntur. Animi quo fuga assumenda ipsam cumque, magni quidem accusantium doloremque ducimus voluptates aspernatur delectus alias maiores perferendis iure quis velit nisi veritatis suscipit? Laudantium dolorem corrupti tempore nesciunt cumque provident maiores ipsam ut? Repellendus, repellat architecto quibusdam commodi, earum accusantium minima deleniti suscipit mollitia recusandae eaque animi at necessitatibus qui quo modi, consequatur voluptatibus inventore fugiat dolor aut? Dolore perspiciatis aperiam quam, consequatur laboriosam optio qui consequuntur necessitatibus quibusdam fuga labore minima ex repellendus unde. Consequatur alias explicabo blanditiis unde. Quasi tempore placeat, quis voluptate adipisci doloribus aperiam obcaecati modi voluptatem consectetur expedita maxime animi dignissimos fugiat ex fugit unde itaque a? Pariatur obcaecati quas perspiciatis quisquam autem culpa, odit officiis ipsam sequi sit totam qui vero soluta accusamus tempore reprehenderit eaque nam, animi itaque ullam, fuga quae dolor aliquam nostrum. Minus iure unde sapiente nemo officia deleniti, ipsum dolor exercitationem cum molestias autem magnam sequi similique numquam voluptatem quis dicta vitae voluptates esse provident maiores nostrum veniam repellendus quasi? Omnis non praesentium consectetur animi ut maxime iure exercitationem dolorum. Odio perferendis accusamus tempora nobis quo asperiores, voluptatum laboriosam vero accusantium. Vel quisquam ut voluptatem nihil odio labore laudantium eligendi doloremque aliquam ad in aperiam, error beatae iure fuga iusto provident tenetur dignissimos culpa illum, reprehenderit sapiente inventore autem esse. Placeat possimus explicabo ipsa quos porro velit facilis similique exercitationem optio itaque, repellendus aspernatur non maiores cupiditate aliquam molestias sequi delectus eius. Eaque nesciunt odio saepe consequatur quaerat, aliquam incidunt cumque non ipsum necessitatibus, natus ab, et blanditiis repellendus nulla dolorem culpa corrupti nostrum. Molestias quis velit omnis placeat corporis mollitia quam? Architecto vero, esse deserunt sint totam inventore tempore molestias est cupiditate sequi nisi ipsa pariatur, aspernatur animi, autem quaerat aut iste officia! Quae dolor praesentium minus corrupti, mollitia officia quos! Consequatur ut at earum id, sapiente quisquam nisi. Praesentium rem dolorem, incidunt rerum magni iure quia consequatur id necessitatibus blanditiis perspiciatis veritatis nobis impedit nesciunt consequuntur tenetur tempora doloribus velit. Facere in inventore iste voluptate magni voluptatibus laborum pariatur doloribus, eaque cumque! Molestiae quam corporis officia veritatis illum, architecto facilis consequuntur dolores inventore.</p>
+    <!-- Visi elementai pagal nutylėjimą turi priskirtą statinę (static) poziciją -->
+    <div class="box purple position-1"></div>
+    <div class="box orange position-2"></div>
+    
+    <div class="black-box">
+        <div>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora est doloremque fugit magnam, temporibus voluptas sit ducimus similique, veniam, aut harum quod aspernatur praesentium deserunt incidunt omnis blanditiis nobis cum veritatis? Aliquam perferendis quas libero. Quis explicabo, eum quae voluptatum molestiae, nobis tempora libero maiores natus quaerat, id adipisci necessitatibus!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam nobis quam fugiat dolores deleniti reprehenderit delectus, sed nemo officia beatae amet ratione iste omnis in eaque dolor quod, eius modi hic pariatur? Maiores suscipit, optio nobis amet reiciendis quo sed voluptatibus fugit ullam libero delectus, odio quisquam reprehenderit aspernatur excepturi dolorum iste accusantium? Impedit explicabo sed sequi ipsa quis aliquid nemo eum dicta hic placeat, voluptatum illo, mollitia ad autem. Quae, ut! Asperiores dolorem debitis, consequuntur quasi voluptatem quos assumenda ad ducimus optio tempore vitae magni natus vero, rerum, explicabo odit aliquid nemo minus possimus beatae perspiciatis. Numquam, vel?
+            <div>
+                <div class="box tomato position-3"></div>
+                <div class="box purple position-4"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

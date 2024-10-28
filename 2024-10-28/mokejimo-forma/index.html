@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokejimo forma</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #e2f1fc;
+            margin: 0;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        .payment {
+            background-color: white;
+            width: 1000px;
+            margin: 100px auto;
+            padding: 35px;
+        }
+
+        input {
+            width: 100%;
+            border: 1px solid #eeeeee;
+            background-color: white;
+            text-align: center;
+            height: 50px;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Norint stilizuoti placeholder pseudo-elementą */
+        input::placeholder {
+            color: rgb(182, 182, 182);
+            text-transform: uppercase;
+        }
+
+        .row {
+            display: flex;
+            padding: 10px 0;
+        }
+
+        .col {
+            width: 50%;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+
+        .description {
+            color: rgb(159, 159, 159);
+            font-size: 14px;
+        }
+
+        .expiry-date {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .align-items-center {
+            align-items: center;
+        }
+
+        .justify-content-between {
+            justify-content: space-between;
+        }
+
+        .justify-content-end {
+            justify-content: end;
+        }
+
+        .iban {
+            text-align: left;
+            background-color: #f9f9f9;
+        }
+
+        button {
+            background-color: #2962fe;
+            color: white;
+            display: block;
+            border: none;
+            width: 100%;
+            padding: 15px 0;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 80px;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .relative .bi {
+            position: absolute;
+            right: 15px;
+            top: 13px;
+
+            /* Automatinis centravimas: */
+            /* top: calc(50% - 11px); */
+
+            top: 50%;
+            /* transform: translate(0, -50%); */
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="payment">
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="label">Card Number</div>
+                <div class="description">Enter 16-digit card number on the card</div>
+            </div>
+            <div class="col d-flex justify-content-end">
+                <a href="#">
+                    <i class="bi bi-pencil"></i>
+                    <span>Edit</span>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <input type="text" class="iban" placeholder="LT51546156165165165156"/>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="label">Expiry Date</div>
+                <div class="description">Enter the expiration date of the Card</div>
+            </div>
+            <div class="col">
+                <div class="expiry-date">
+                    <input type="text" placeholder="mm"/>
+                    <div class="separator">/</div>
+                    <input type="text" placeholder="yy" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="label">CVC Number</div>
+                <div class="description">Enter card verification code the back of the card</div>
+            </div>
+            <div class="col relative">
+                <i class="bi bi-eye"></i>
+                <input type="text" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="label">Cardholder Name</div>
+                <div class="description">Enter card holders name</div>
+            </div>
+            <div class="col relative">
+                <i class="bi bi-person"></i>
+                <input type="text" placeholder="Cardholder Name"/>
+            </div>
+        </div>
+        <button>Pay Now</button>
+    </div>
+    
+</body>
+</html>
