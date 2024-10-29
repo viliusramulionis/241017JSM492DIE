@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #A7D7C5 url(bg.svg) no-repeat;
+            background-size: cover;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: "Karla", sans-serif;
+            font-size: 15px;
+            line-height: 19.5px;
+            color: #32403B;
+        }
+
+        input,
+        select,
+        button {
+            font-family: "Karla", sans-serif;
+        }
+
+        a {
+            color: #32403B;
+        }
+
+        .login {
+            width: 455px;
+            background-color: #F6FBF9;
+            border-radius: 32px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .login h1 {
+            font-size: 36px;
+            line-height: 47px;
+            margin: 0;
+        }
+
+        .login .subheading {
+            margin: 0;
+            padding: 0 30px;
+        }
+
+        .login form {
+            margin-top: 32px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            background-color: white;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            font-size: 15px;
+            width: 100%;
+            padding: 15px 22px;
+        }
+
+        .login .spacer {
+            margin-bottom: 15px;
+        }
+
+        .login button {
+            background-color: #84C7AE;
+            border: none;
+            color: white;
+            margin-top: 21px;
+            border-radius: 15px;
+            line-height: 29px;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 15px 48px;
+        }
+
+        .login .signin {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <h1>Create An Account</h1>
+        <p class="subheading">Create an account to enjoy all the services without any ads for free!</p>
+        <form>
+            <div class="spacer">
+                <input type="text" placeholder="Email Address">
+            </div>
+            <div>
+                <input type="password" placeholder="Password">
+            </div>
+            <button>Create Account</button>
+        </form>
+        <p class="signin">Already Have An Account? <a href="#">Sign In</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <style>
+        .box {
+            width: 250px;
+            height: 250px;
+        }
+
+        .pavyzdys1 {
+            background-color: orange;
+            /* Nurodomos reikšmės: animuojama savybė, animacijos ilgis (sekundemis arba milisekundėmis), animacijos tipas */
+            /* viena sekundė = 1s */
+            /* viena sekundė = 1000ms */
+
+            transition: background-color 500ms ease-in-out;
+        }
+
+        .pavyzdys1:hover {
+            background-color: black;
+        }
+
+        .pavyzdys2 {
+            background-color: aqua;
+
+            /* Norint animuoti visas savybes vienu metu rašome all */
+            /* transition: all 1000ms ease-in-out; */
+
+            /* Norint nurodyti animacijos ilgius ir tipus kiekvienai savybei: */
+            transition: background-color 1000ms ease-in-out,
+                        width 800ms ease-in-out,
+                        height 1500ms ease-in;
+        }
+
+        .pavyzdys2:hover {
+            background-color: rgb(16, 66, 67);
+            width: 500px;
+            height: 500px;
+        }
+
+        .pavyzdys3 {
+            background-color: tomato;
+            position: relative;
+        }
+
+        .pavyzdys3 .title {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.796);
+            padding: 10px 20px;
+            opacity: 0;
+            transition: opacity .5s ease-in-out;
+        }
+
+        .pavyzdys3:hover .title {
+            opacity: 1;
+        }
+
+        button {
+            background-color: greenyellow;
+            color: black;
+            border-radius: 8px;
+            padding: 20px 50px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button::before {
+            content: "";
+            width: 100%;
+            height: 0;
+            background-color: rgba(0, 0, 0, 0.138);
+            position: absolute;
+            top: 0;
+            left: 0; 
+            transition: height .5s ease-out;
+        }
+
+        button:hover::before {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box pavyzdys1"></div>
+    <div class="box pavyzdys2"></div>
+    <div class="box pavyzdys3">
+        <div class="title">Lorem, ipsum dolor.</div>
+    </div>
+    <div style="margin-top: 50px;">
+        <button>Užvesk virš manęs pelę</button>
+    </div>
+</body>
+</html>
