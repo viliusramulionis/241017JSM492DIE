@@ -23,6 +23,9 @@
         .orange {
             background-color: orange;
         }
+        .tomato {
+            background-color: tomato;
+        }
 
         @media screen and (min-width: 768px) {
             .boxes {
@@ -33,12 +36,19 @@
                 width: 50%;
             }
         }
+
+        @media screen and (max-width: 768px) {
+            .tomato {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="boxes">
         <div class="box purple"></div>
         <div class="box orange"></div>
+        <div class="box tomato"></div>
     </div>
 </body>
 </html>
