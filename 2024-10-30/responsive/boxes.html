@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boxes</title>
+    <style>
+        .boxes {
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+        }
+
+        .box {
+            width: 100%;
+            height: 400px;
+        }
+
+        .purple {
+            background-color: purple;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        @media screen and (min-width: 768px) {
+            .boxes {
+                flex-direction: row;
+            }
+
+            .box {
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="boxes">
+        <div class="box purple"></div>
+        <div class="box orange"></div>
+    </div>
+</body>
+</html>
