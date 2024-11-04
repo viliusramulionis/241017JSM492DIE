@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS rem-em</title>
+    <style>
+        html {
+            /* Rem matavimo vienetas remiasi prie html elemento priskirtu šrifto dydžiu */
+            /* Pagal nutylėjimą naršyklė priskiria 16px teksto šrifto dydį */
+            font-size: 100%;
+        }
+
+        h1 {
+            font-size: 200%;
+            /* 1rem = 16px */
+            /* 2rem = 3px */
+            padding: 2rem 0;
+        }
+
+        p {
+            margin: 5rem 0;
+        }
+
+        main {
+            font-size: 10px;
+        }
+
+        h2 {
+            /* 1em = tėvinio elemento šrifto dydis  */
+            margin: 15em;
+        }
+
+        @media screen and (max-width: 768px) {
+            html {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, iste.</h1>
+    <main>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, voluptates?</h2>
+    </main>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum natus voluptatibus necessitatibus consequuntur voluptatem. Ratione ex cum labore asperiores magnam.</p>
+</body>
+</html>

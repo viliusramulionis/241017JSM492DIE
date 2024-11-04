@@ -1,0 +1,12 @@
+html {
+    --primary-color: #1C4532;
+    --secondary-color: #171923;
+    --text-color: #718096;
+    --border-color: #CBD5E0;
+    --checkbox-border-color: #CFD9E0;
+    --divider-color: #A0AEC0;
+    --placeholder-color: #4A5568;
+    --circle-gradient: linear-gradient(0deg, #F7FAFC, 100%, #EDF2F7);
+    --font: "Inter", sans-serif;
+    --button-text: #F7FAFC;
+}

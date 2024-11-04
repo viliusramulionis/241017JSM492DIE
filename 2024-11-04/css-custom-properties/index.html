@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS custom properties</title>
+    <style>
+        html {
+            /* CSS kintamųjų savybės yra paveldimos */
+            /* CSS kintamojo deklaravimas: */
+            --akcento-spalva: yellow;
+            --fono-spalva: black;
+            --mygtuko-krastai: 10px 25px;
+        }
+
+        body {
+            --fono-spalva: rgb(81, 81, 81);
+            background-color: var(--fono-spalva);
+            color: white;
+            margin: 0;
+        }
+
+        a {
+            /* Norint panaudoti css kintamajį: */
+            color: var(--akcento-spalva);
+        }
+
+        button {
+            background-color: var(--akcento-spalva);
+            color: black;
+            padding: var(--mygtuko-krastai);
+        }
+
+        header {
+            background-color: var(--akcento-spalva);
+            color: black;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            button {
+                --mygtuko-krastai: 5px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, est?</h1>
+    </header>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, corrupti!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, corrupti!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, corrupti!</p>
+    <a href="#">Lorem ipsum dolor sit amet.</a>
+    <button>Hello</button>
+</body>
+</html>
