@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col first-half">
                 <div class="padding">
                     <div class="logo">
                         <img src="assets/images/logo.svg" alt="">
@@ -46,13 +46,19 @@
                             </div>
                             <button class="button">Sign in</button>
                         </form>
-                        <hr data-label="or">
-                        <a href="#" class="social-button google">Continue with Google</a>
-                        <a href="#" class="social-button facebook">Continue with Facebook</a>
+                        <hr data-tekstas="or">
+                        <div>
+                            <a href="#" class="social-button google">Continue with Google</a>
+                            <a href="#" class="social-button facebook">Continue with Facebook</a>
+                        </div>
+                        <p class="mobile-register-link">
+                            <span>Don’t have an account?</span> 
+                            <a href="#">Create now</a>
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col second-half">
                 <div class="green">
                     <h3 class="contact">Support</h3>
                     <div class="carousel">
@@ -61,14 +67,16 @@
                             <p>Use your Venus card around the world with no hidden fees. Hold, transfer and spend money.</p>
                             <button class="small-button">Learn more</button>
                         </div>
-                        <div class="earnings">
-                            <div class="row">
-                                <div class="col">
-                                    <img src="assets/images/icon-stats.svg">
-                                </div>
-                                <div class="col">
-                                    <div class="label">Earnings</div>
-                                    <div class="totals">$350.40</div>
+                        <div class="earnings-wrapper">
+                            <div class="earnings">
+                                <div class="row">
+                                    <div class="col">
+                                        <img src="assets/images/icon-stats.svg">
+                                    </div>
+                                    <div class="col">
+                                        <div class="label">Earnings</div>
+                                        <div class="totals">$350.40</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -76,13 +84,33 @@
                             <h2>Introducing new features</h2>
                             <p>Analyzing previous trends ensures that businesses always make the right decision. And as the scale of the decision and it’s impact magnifies...</p>
                         </div>
-                        <!-- <div class="dots">
+                        <div class="dots">
                             <ul>
-                                <li>
-
+                                <li class="arrow">
+                                    <a href="#">
+                                        <svg width="7" height="8" viewBox="0 0 7 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 0.939908L5.66802 -9.15527e-05L0 3.99991L5.66802 7.99991L7 7.05991L2.67341 3.99991L7 0.939908Z" />
+                                        </svg>                                            
+                                    </a>
+                                </li>
+                                <li class="bullet">
+                                    <a href="#"><span></span></a>
+                                </li>
+                                <li class="bullet active">
+                                    <a href="#"><span></span></a>
+                                </li>
+                                <li class="bullet">
+                                    <a href="#"><span></span></a>
+                                </li>
+                                <li class="arrow">
+                                    <a href="#">
+                                        <svg width="7" height="8" viewBox="0 0 7 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.33198 -9.15527e-05L0 0.939908L4.32659 3.99991L0 7.05991L1.33198 7.99991L7 3.99991L1.33198 -9.15527e-05Z" />
+                                        </svg>  
+                                    </a>
                                 </li>
                             </ul>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>

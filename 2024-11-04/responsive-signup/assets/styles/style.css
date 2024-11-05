@@ -9,6 +9,11 @@ body {
     margin: 0;
     font-family: var(--font);
     color: var(--text-color);
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 ul {
@@ -43,7 +48,7 @@ input.field::placeholder {
 
 .container {
     max-width: 1440px;
-    margin: 0 auto;
+    width: 100%;
 }
 
 .row {
@@ -153,11 +158,384 @@ span.checkbox {
 .button {
     background-color: var(--primary-color);
     border: none;
-    color: var(--button-text);
+    color: var(--white-text);
     width: 100%;
     height: 60px;
     font-weight: 500;
     font-size: 20px;
     border-radius: 20px;
     margin-top: 40px;
+}
+
+.small-button {
+    background-color: var(--primary-color);
+    color: var(--white-text);
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 70px;
+    padding: 15px 48px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--divider-color);
+    margin: 60px 0;
+    position: relative;
+    overflow: visible;
+}
+
+hr::before {
+    content: attr(data-tekstas);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    background-color: var(--background-color);
+    padding: 0 1.5rem;
+}
+
+.social-button {
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    display: block;
+    text-align: center;
+    padding: 19px 25px;
+    color: var(--social-button-color);
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.social-button:first-child {
+    margin-bottom: 34px;
+}
+
+/* Selektorius norint pasirinkti elementą turinti klasę social-button IR google */
+.social-button.google {
+    background: url(../images/icon-gplus.svg) no-repeat 26px center;
+}
+.social-button.facebook {
+    background: url(../images/icon-fb.svg) no-repeat 26px center;
+}
+
+.green {
+    background-color: var(--primary-color);
+    height: 100%;
+    padding: 60px 100px 60px 138px;
+    position: relative;
+}
+
+.carousel {
+    padding-top: 150px;
+}
+
+.contact {
+    text-align: center;
+    margin: 0;
+    color: var(--white-text);
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact::before {
+    background: url(../images/icon-support.svg);
+    content: "";
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.first-half {
+    width: 47%;
+}
+
+.second-half {
+    width: 53%;
+}
+
+.card {
+    background: var(--card-background) url(../images/card.png) no-repeat right top;
+    border-radius: 10px;
+    padding: 45px 225px 33px 45px;
+}
+
+.card h2 {
+    color: var(--primary-color);
+    font-size: 34px;
+    line-height: 37px;
+    margin: 0;
+}
+
+.card p {
+    line-height: 28px;
+    margin-top: 17px;
+    margin-bottom: 35px;
+}
+
+.earnings-wrapper {
+    display: flex;
+    justify-content: end;
+    transform: translateY(-50%)
+}
+
+.earnings {
+    background: var(--card-background);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 287px;
+    padding: 20px 40px;
+    color: var(--primary-color);
+}
+
+.earnings img {
+    display: block;
+}
+
+.earnings .row {
+    align-items: center;
+    gap: 30px;
+}
+
+.earnings .col:first-child {
+    width: auto;
+}   
+
+.earnings .label {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.earnings .totals {
+    font-weight: 800;
+    font-size: 24px;
+}
+
+.content {
+    padding: 0 20px;
+}
+
+.content h2 {
+    color: var(--white-text);
+    font-weight: 600;
+    font-size: 40px;
+    text-align: center;
+}
+
+.content p {
+    color: var(--gray-text);
+    font-size: 20px;
+    text-align: center; 
+    line-height: 140%;
+}
+
+.dots {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.dots ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.dots .arrow svg {
+    fill: var(--dots-fill);
+}
+
+.dots a {
+    display: block;
+}
+
+.dots li.arrow {
+    height: 24px;
+}
+
+.dots .bullet a span {
+    display: block;
+    width: 4px;
+    height: 4px;
+    background-color: var(--dots-fill);
+    border-radius: 50%;
+}
+
+.dots .bullet a:hover span {
+    background-color: var(--dots-hover-fill);
+}
+
+.dots .arrow a:hover svg {
+    fill: var(--dots-hover-fill);
+}
+
+.dots .bullet.active span {
+    background-color: var(--dots-active-fill);
+    width: 8px;
+    height: 8px;
+    position: relative;
+}
+
+.dots .bullet.active span::before {
+    content: "";
+    display: block;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    border: 3px solid var(--dots-active-fill);
+    transform: translate(-7px, -7px);
+    position: relative;
+    z-index: -1;
+} 
+
+.dots .bullet.active span::after {
+    content: "";
+    width: 15px;
+    height: 27px;
+    background-color: var(--primary-color);
+    position: relative;
+    z-index: -1;
+    top: -38px;
+    left: 0px;
+    transform: rotate(-45deg);
+    display: block;
+}
+
+.mobile-register-link {
+    display: none;
+}
+
+@media screen and (max-width: 1440px) {
+    .carousel {
+        padding-top: 70px;
+    }
+
+    .green {
+        padding: 60px 50px 60px 50px;
+    }
+
+    .card {
+        padding: 45px 185px 63px 45px;
+    }
+
+    .content h2 {
+        margin-top: 0;
+    }
+
+    .inner {
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        max-width: 688px;
+    }
+    .first-half {
+        width: 100%;
+    }
+    .second-half {
+        display: none;
+    }
+
+    .inner {
+        padding-left: 60px;
+    }
+
+    .input-holder {
+        padding-right: 70px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .padding {
+        padding: 30px 25px;
+    }
+
+    .logo img {
+        max-width: 117px;
+    }
+
+    .inner {
+        padding-left: 0;
+        padding-top: 52px;
+    }
+
+    .inner h2 {
+        font-size: 36px;
+    }
+
+    .inner p {
+        display: none;
+    }
+
+    input.field {
+        height: 45px;
+    }
+
+    .remember-me label {
+        font-size: 14px;
+    }
+
+    .forgot-password {
+        font-size: 14px;
+    }
+
+    .social-button {
+        font-size: 14px;
+        padding: 15px 25px;
+    }
+
+    .social-button.google {
+        background-size: 17px;
+    }
+
+    .social-button.facebook {
+        background-size: 17px;
+    }
+
+    hr {
+        margin: 50px 0 40px;
+    }
+
+    hr::before {
+        padding: 0 .8rem;
+    }
+
+    .input-holder {
+        padding-right: 0;
+    }
+
+    .social-button:first-child {
+        margin-bottom: 20px;
+    }
+
+    .button {
+        height: 52px;
+        border-radius: 30px;
+    }
+
+    .input-password button {
+        display: none;
+    }
+    .input-password .field {
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+    }
+
+    .inner .mobile-register-link {
+        display: block;
+        font-size: 14px;
+        text-align: center;
+        margin-top: 40px;
+    }
 }

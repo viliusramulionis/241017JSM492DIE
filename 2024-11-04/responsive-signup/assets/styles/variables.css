@@ -8,5 +8,12 @@ html {
     --placeholder-color: #4A5568;
     --circle-gradient: linear-gradient(0deg, #F7FAFC, 100%, #EDF2F7);
     --font: "Inter", sans-serif;
-    --button-text: #F7FAFC;
+    --white-text: #F7FAFC;
+    --gray-text: #CFD9E0;
+    --card-background: #F7FAFC;
+    --background-color: white;
+    --social-button-color: #67728A;
+    --dots-fill: #EDF2F730;
+    --dots-hover-fill: #CBD5E0;
+    --dots-active-fill: #D9D9D9;
 }
