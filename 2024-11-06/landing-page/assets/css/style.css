@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+@font-face {
+    font-family: "Graphik";
+    src: url(../fonts/GraphikBold.otf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Graphik";
+    src: url(../fonts/GraphikBoldItalic.otf);
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Begin CSS Reset */
+
 * {
     box-sizing: border-box;
 }
@@ -8,6 +23,7 @@ body {
     margin: 0;
     font-family: "Nunito", sans-serif;
     background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 ul {
@@ -18,8 +34,78 @@ ul {
 
 a {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.70);
+    color: var(--text-color);
 }
+
+h1,
+h2 {
+    font-family: "Graphik";
+    color: var(--heading-color);
+}
+
+h1 {
+    font-size: 80px;
+    line-height: 84px;
+}
+
+h2 {
+    font-size: 60px;
+    line-height: 70px;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* CSS Column Grid */
+
+.row {
+    display: flex;
+    gap: var(--container-gutter)
+}
+
+.col {
+    width: 100%;
+}
+
+.col-1 {
+    width: 8.333333333333333%;
+}
+.col-2{
+    width: 16.66666666666667%;
+}
+.col-3 {
+    width: 25%;
+}
+.col-4 {
+    width: 33.333333333333333%;
+}
+.col-5 {
+    width: 41.66666666666667%;
+}
+.col-6 {
+    width: 50%;
+}
+.col-7 {
+    width: 58.333333333333333%;
+}
+.col-8 {
+    width: 66.66666666666667%;
+}
+.col-9 {
+    width: 75%;
+}
+.col-10 {
+    width: 83.333333333333333%;
+}
+.col-11 {
+    width: 91.66666666666667%;
+}
+.col-12 {
+    width: 100%;
+}
+
+/* General Classes */
 
 .container {
     max-width: calc(1200px + var(--container-gutter) * 2);
@@ -27,6 +113,51 @@ a {
     padding-right: var(--container-gutter);
     margin: 0 auto;
 }
+
+.hide-desktop {
+    display: none;
+}
+
+.button {
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    font-size: 20px;
+    padding: 16px 32px;
+    color: var(--color);
+    display: block;
+    width: fit-content;
+    transition: all .1s ease-in;
+}
+
+.button:hover {
+    background-color: var(--color);
+    color: var(--primary-color)
+}
+
+.icon-button {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.icon-button path {
+    fill: var(--color);
+    transition: all .1s ease-in;
+}
+
+.icon-button:hover path {
+    fill: var(--primary-color)
+}
+
+.icon-button svg {
+    transition: all .1s ease-in;
+}
+
+.icon-button:hover svg {
+    transform: translate(5px, -1px);
+}
+
+/* Header */
 
 header .header-inner {
     display: flex;
@@ -56,11 +187,36 @@ header .mobile-nav {
     border: none;
 }
 
-.hide-desktop {
-    display: none;
+section.intro {
+    padding: 80px 0;
 }
 
+section.intro h1 {
+    margin: 0;
+}
+
+section.intro p {
+    font-size: 21px;
+    line-height: 39px;
+    margin: 24px 0 50px;
+}
+
+section.intro .col:last-child {
+    text-align: right;
+}
+
+section.intro .row {
+    align-items: center;
+}
+
+/* Media queries */
+
 @media screen and (max-width: 768px) {
+    h1 {
+        font-size: 42px;
+        line-height: 150%;
+    }
+
     .hide-desktop {
         display: block;
     }
@@ -68,4 +224,37 @@ header .mobile-nav {
     .hide-mobile {
         display: none;
     }
+
+    .row {
+        flex-direction: column;
+        gap: 80px;
+    }
+
+    .button {
+        font-size: 16px;
+        border-radius: 0;
+        padding: 11px 24px;
+    }
+
+    header .logo img {
+        max-width: 115px;
+    }
+
+    header .header-inner {
+        padding: 40px 0 0;
+    }
+
+    section.intro {
+        padding: 74px 0;
+    }
+
+    section.intro .col:last-child {
+        text-align: center;
+    }
+
+    section.intro p {
+        font-size: 16px;
+        line-height: 150%;
+    }
+    
 }
