@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .col {
+            height: 80px;
+            background-color: rgb(194, 194, 255);
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+            line-height: 80px;
+            border: 1px solid black;
+        }
+
+        .row {
+            display: flex;
+            margin-bottom: 20px;
+            /* gap: 20px; */
+        }
+
+        .col {
+            width: 100%;
+            /* flex: 1 0 auto; */
+        }
+
+        .col-1 {
+            width: 8.333333333333333%;
+        }
+
+        .col-2{
+            width: 16.66666666666667%;
+        }
+        .col-3 {
+            width: 25%;
+        }
+        .col-4 {
+            width: 33.333333333333333%;
+        }
+        .col-5 {
+            width: 41.66666666666667%;
+        }
+        .col-6 {
+            width: 50%;
+        }
+        .col-7 {
+            width: 58.333333333333333%;
+        }
+        .col-8 {
+            width: 66.66666666666667%;
+        }
+        .col-9 {
+            width: 75%;
+        }
+        .col-10 {
+            width: 83.333333333333333%;
+        }
+        .col-11 {
+            width: 91.66666666666667%;
+        }
+        .col-12 {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">1</div>
+            <div class="col">2</div>
+            <div class="col">3</div>
+            <div class="col">4</div>
+            <div class="col">5</div>
+            <div class="col">6</div>
+            <div class="col">7</div>
+            <div class="col">8</div>
+            <div class="col">9</div>
+            <div class="col">10</div>
+            <div class="col">11</div>
+            <div class="col">12</div>
+        </div>
+        <div class="row">
+            <div class="col">half</div>
+            <div class="col">half</div>
+        </div>
+        <div class="row">
+            <div class="col">third</div>
+            <div class="col">third</div>
+            <div class="col">third</div>
+        </div>
+        <div class="row">
+            <div class="col">fourth</div>
+            <div class="col">fourth</div>
+            <div class="col">fourth</div>
+            <div class="col">fourth</div>
+        </div>
+        <div class="row">
+            <div class="col col-1">1</div>
+            <div class="col col-11">11</div>
+        </div>
+        <div class="row">
+            <div class="col col-2">1</div>
+            <div class="col col-4">2</div>
+            <div class="col col-6">half</div>
+        </div>
+        <div class="row">
+            <div class="col col-2">1</div>
+            <div class="col col-2">2</div>
+            <div class="col col-5">2</div>
+            <div class="col col-3">3</div>
+        </div>
+    </div>
+</body>
+</html>

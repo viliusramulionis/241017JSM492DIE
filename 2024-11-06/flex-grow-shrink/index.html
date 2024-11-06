@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex grow, shrink, basis</title>
+    <style>
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .col {
+            height: 80px;
+            background-color: rgb(194, 194, 255);
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+            line-height: 80px;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .col {
+            /* Pirma reikšmė flex-grow */
+            /* Antra reikšmė flex-shrink */
+            /* Trečia reikšmė flex-basis */
+            flex: 0 0 100%;
+            /* width: 100%; */
+        }
+        
+        .col:nth-child(1) {
+            /* Nurodom kuris elementas turi siaurėti */
+            flex-shrink: 1;
+        }
+
+        .col:nth-child(2) {
+            /* Nurodom kuris elementas turėtų praplatėti */
+            flex-grow: 1;
+        }
+
+        .col:nth-child(3) {
+            flex-grow: 1;
+        }
+
+        .col:nth-child(4) {
+            flex-grow: 1;
+            flex-basis: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">1</div>
+            <div class="col">2</div>
+            <div class="col">3</div>
+            <div class="col">4</div>
+        </div>
+    </div>
+</body>
+</html>
