@@ -1,0 +1,22 @@
+html {
+    --primary-color: #5454D4;
+    --background-color: #19191B;
+    --container-gutter: 24px;
+    --text-color: rgba(255, 255, 255, 0.70);
+    --heading-color: white;
+    --icon-blue-bg: rgba(84, 84, 212, 0.1);
+    --icon-red-bg: rgba(240, 64, 55, 0.1);
+    --icon-yellow-bg: rgba(254, 221, 90, 0.1);
+    --portoflio-item-bg: #1E1E20;
+    --bullet-bg: #f8f8f8;
+}
+
+.button {
+    --color: white;
+}
+
+.empty-button {
+    --border-color: white;
+    --color: white;
+    --border-radius: 5px;
+}
