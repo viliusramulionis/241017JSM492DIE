@@ -221,7 +221,8 @@ section.intro::before {
     transform: rotate(-54deg);
     background: linear-gradient(180deg, var(--color1) 0%, var(--color2) 100%);
     border-radius: 233px;
-    position: absolute;
+    position: relative;
+    z-index: -1;
     top: -230px;
     left: -50px;
     opacity: .27;

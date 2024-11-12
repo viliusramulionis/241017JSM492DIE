@@ -13,6 +13,7 @@ html {
 
 .button {
     --color: white;
+    --button-border-radius: 4px;
 }
 
 .empty-button {

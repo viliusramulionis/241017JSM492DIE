@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS hierarchy</title>
+    <style>
+        html {
+            color: red;
+        }
+
+        p {
+            color: blue;
+        }
+
+        #pirmas {
+            color: green;
+        }
+
+        #pirmas {
+            color: rgb(253, 0, 0);
+        }
+
+        #pirmas {
+            color: rgb(48, 0, 205);
+        }
+
+        #pirmas {
+            color: rgb(251, 255, 0);
+        }
+
+        #pirmas {
+            color: tomato !important;
+        }
+
+        .purple {
+            color: purple !important;
+        }
+
+        .purple {
+            color: orange !important;
+        }
+    </style>
+</head>
+<body>
+    <p id="pirmas" class="purple" style="color: pink !important">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, quos.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, quos.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, quos.</p>
+</body>
+</html>
