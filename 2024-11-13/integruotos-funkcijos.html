@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integruotos funkcijos</title>
+</head>
+<body>
+    <script>
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN
+        // NaN - Not A Number
+        if(isNaN(0 / 0)) {
+            console.log('Tai ne skaičius');
+        }
+
+        let pirmas = "2024";
+
+        console.log(typeof pirmas); //string
+
+        // Norint konveruoti string duomens tipą į sveiką skaičių
+
+        console.log(typeof parseInt(pirmas)); //number
+        console.log(parseInt(pirmas)); 
+
+        pirmas = "19.9999";
+        
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+        console.log(parseInt(pirmas)); //19
+
+        // Norint konvertuoti skaičių po kablelio iš stringo
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat
+        console.log(parseFloat(pirmas));
+
+        pirmas = "19.9999";
+
+        // ESM VARIANTAS:
+        console.log(+pirmas);
+
+        pirmas = "19";
+
+        console.log(+pirmas);
+
+        pirmas = "19";
+
+        // Kodėl atliekama konversija:
+        console.log(20 + parseInt(pirmas));
+        console.log(20 + +pirmas);
+
+        let skaicius = 19.54565155;
+
+        // toFixed() metodas suapvalina skaičių iki nurodyto kiekio po kablelio
+        console.log(skaicius.toFixed(2)) //Du skaičiai po kablelio
+        console.log(skaicius.toFixed(4)) //Keturi skaičiai po kablelio
+        
+
+        let stringas = "Labas Pasauli";
+
+        // Norint patikrinti ar ždis Labas patalpintas stringe:
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
+        if(stringas.includes("Labas")) {
+            console.log("Radome tokį žodį");
+        }
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+        stringas = "This method does not mutate the string value it's called on. It returns a new string."
+        
+        // Metodas replace pakeičia pirmą surastą poziciją
+        let naujasStringas = stringas.replace("method", "function");
+
+        console.log(naujasStringas);
+
+        // Norint pakeisti visas pozicijas:
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll
+        console.log(stringas.replaceAll(" ", "-"));
+
+        stringas = "Labai įdomus tekstas"; 
+                                        
+        // Jeigu norėtume paimti pirmus tris simbolius:
+        console.log(stringas[0] + stringas[1] + stringas[2]);
+
+        // Stringo ilgis:
+        console.log(stringas.length);
+
+        // Pozicijų kiekis:
+        console.log(stringas.length - 1);
+
+        // Jeigu norėtume paimti paskutinius tris simbolius:
+        console.log(stringas[stringas.length - 3] + stringas[stringas.length - 2] + stringas[stringas.length - 1]);
+
+        // Norint konvertuoti stringą į mažąsias raides:
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+
+        stringas = "LABAI ĮDOMUS TEKSTAS";
+
+        console.log(stringas.toLowerCase());
+
+        // Norint konvertuoti stringą į didžiąsias raides:
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+
+        stringas = "labai įdomus tekstas";
+
+        console.log(stringas.toUpperCase());
+    </script>
+</body>
+</html>

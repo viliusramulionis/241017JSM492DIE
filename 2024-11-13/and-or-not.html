@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AND OR NOT</title>
+</head>
+<body>
+    <script>
+        // Sukurkite du kintamuosius kurių reikšmės yra skaičiai nuo 5 iki 99
+        // ir patikrinkite ar pirmas skaičius yra didesnis nei 20 IR antras skaičius mažesnis nei 80 
+
+        let pirmas = 44;
+        let antras = 68;
+        
+        // if(pirmas > 20) {
+        //     if(antras < 80) {
+        //         console.log('Pirmas yra didesnis nei 20 ir antras yra mažesnis nei 80');
+        //     }
+        // }
+
+        // PAVYZDYS NAUDOJANT && Operatorių:  
+        // Kuomet naudojamas && oepratorius visos sąlygos turi būti true
+        if(pirmas > 20 && antras < 80) {
+            console.log('Pirmas yra didesnis nei 20 ir antras yra mažesnis nei 80');
+        }
+
+        // Patikrinkite ar pirmas skaičius yra didesnis nei 2 ir mažesnis nei 50
+        if(pirmas > 2 && pirmas < 50) {
+            console.log('Pirmas skaičius yra didesnis nei 2 ir mažesnis nei 50');
+        }
+
+
+        // && (AND) operatoriaus pavyzdys: 
+        if(true && true && true && true) {
+            console.log('SUVEIKĖ');
+        }
+
+        // || (OR) operatorius:
+        if(false || false || false || false || true) {
+            console.log('SUVEIKĖ');
+        }
+
+        // Atspausdinkite tekstą "BINGO" jeigu pirmas skaičius nėra lygus 0 arba antras skaičius yra didesnis nei 30 
+        
+        pirmas = 0;
+        antras = 44;
+
+        if(pirmas !== 0 || antras > 30) {
+            console.log("BINGO");
+        }
+
+        // NOT Operatoriaus pavyzdys
+        // Not operatorius sukeičia boolean reiškmes viena su kita
+        // Jeigu buvo true - tapo false
+        // Jeigu buvo false - tapo true
+        nerodyti = false;
+
+        // Nenaudojant NOT operatoriaus:
+        if(nerodyti === false) {
+           console.log('YES!!!') 
+        }
+
+        // Su NOT operatoriumi:
+        if(!nerodyti) {
+           console.log('YES!!!') 
+        }
+
+        
+    </script>
+</body>
+</html>

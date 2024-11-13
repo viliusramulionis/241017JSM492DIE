@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprendimai</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // Jums duoti aritmetiniai veiksmai:
+        // 1) 8 * 4 + 2 
+        // 2) 8 * (4 + 2) 
+        // 3) 48 / 4 
+        // 4) 3 + 6 * 2
+        // Išveskite jų atsakymus.
+        console.log('----PIRMA UŽDUOTIS----');
+
+        console.log(8 * 4 + 2);
+        console.log(8 * (4 + 2));
+        console.log(48 / 4);
+        console.log(3 + 6 * 2);
+
+        // Susikurkite du kintamuosius skaičiams saugoti. Į juos įrašykite norimus skaičius. 
+        // Sukurkite trečią kintamąjį, kurio reikšmė būtų pirmų dviejų kintamųjų suma. 
+        // Visus kintamuosius išveskite konsolėje.
+
+        console.log('----ANTRA UZDUOTIS----')
+
+        let pirmas = 15; 
+        let antras = 25;
+        let trecias = pirmas + antras;
+
+        console.log(pirmas, antras, trecias);
+        
+        console.log('-----TRECIA UZDUOTIS------');
+        
+        // Sukurkite tris kintamuosius skaičiams saugoti. Į juos įrašykite norimus skaičius. 
+        // Raskite šių skaičių suma, skirtumą, sandaugą ir dalmenį. Atsakymus išveskite kartu su 
+        // atliekamu veiksmu (pvz 8 + 2 + 4 = 14). 
+
+        pirmas = 18;
+        antras = 2;
+        trecias = 66;
+
+        console.log(`${pirmas} + ${antras} + ${trecias} = ${pirmas + antras + trecias}`);
+        console.log(`${pirmas} - ${antras} - ${trecias} = ${pirmas - antras - trecias}`);
+        console.log(`${pirmas} * ${antras} * ${trecias} = ${pirmas * antras * trecias}`);
+        console.log(`${pirmas} / ${antras} / ${trecias} = ${pirmas / antras / trecias}`);
+
+        console.log('-----KETVIRTA UZDUOTIS------');
+
+        // Susikurkite du kintamuosius skaičiams saugoti. Į juos įrašykite norimus skaičius. 
+        // Pirmąjį kintamąjį pakelkite 5-uoju laipsniu (eksponentu).
+        // Antrajį padidinkite 2 kartus. Išveskite visus atsakymus 
+        // (pradines reikšmes ir pakeistas reikšmes).
+
+        pirmas = 8;
+        antras = 6;
+
+        console.log('Pirmas skaičius:', pirmas, pirmas**5)
+        console.log('Antras skaičius:', antras, antras**2)
+
+        console.log('-----PENKTA UZDUOTIS------');
+
+        // Sukurkite 4 kintamuosius, kurie saugotų jūsų vardą, pavardę, gimimo metus ir 
+        // šiuos metus (nebūtinai tikrus). Parašykite kodą, kuris pagal gimimo metus 
+        // paskaičiuotų jūsų amžių ir naudodamas vardo ir pavardės kintamuosius atspausdintų tokį sakinį:
+        // "Aš esu Vardenis Pavardenis. Man yra XX metai(ų)".
+
+        let vardas = 'Petras';
+        let pavarde = 'Jonaitis';
+        let gimimoMetai = 1955;
+        let sieMetai = 2024;
+
+        console.log(`Aš esu ${vardas} ${pavarde}. Man yra ${sieMetai - gimimoMetai} metai(ų)`);
+
+        console.log('-----SESTA UZDUOTIS------');
+
+        // Sukurkite du kintamuosius. Jiems priskirkite atsitiktines reikšmes nuo 0 iki 4. 
+        // Didesnę reikšmę padalinkite iš mažesnės ir atspausdinkite rezultatą. 
+        // Patikrinkite kodo veikimą panaudojant funkciją random().
+
+        pirmas = random(0, 4);
+        antras = random(0, 4);
+
+        if(pirmas > antras) {
+            if(antras === 0) {
+                console.log("Dalyba iš nulio negalima");
+            } else {
+                console.log(pirmas / antras);
+            }
+        } else {
+            if(pirmas === antras) {
+                console.log('Skaičiai yra lygūs');
+            } else {
+                if(pirmas == 0) {
+                    console.log(0);
+                } else {
+                    console.log(antras / pirmas);
+                }
+            }
+        }
+
+        // if(pirmas > antras) {
+        //     if(antras === 0) {
+        //         console.log("Dalyba iš nulio negalima");
+        //     } else {
+        //         console.log(pirmas / antras);
+        //     }
+        // } else if(pirmas === antras) {
+        //     console.log('Skaičiai yra lygūs');
+        // } else {
+        //     if(pirmas == 0) {
+        //         console.log(0);
+        //     } else {
+        //         console.log(antras / pirmas);
+        //     }
+        // }
+    </script>
+</body>
+</html>
