@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apimtys (Scope)</title>
+</head>
+<body>
+    <script>
+        // Riestiniai skliaustai nurodo apimtį (scope)
+        if(true) {
+            let labas = "Hello";
+            console.log(labas);
+        }
+        // Klaida: Kintamasis neegzistuoja už bloko apimties (clock scope)
+        // console.log(labas);
+
+        {
+            let x = 15;
+        }
+
+        // Klaida: kintamasis x neegzistuoja
+        // console.log(x);
+
+        let vardas = "Jonas";
+
+        {
+            vardas = "Petras";
+        }
+
+        console.log(vardas);
+
+        // Var būdu deklaruotiems kintamiesiems negalioja blokinė apimtis
+        {
+            var pavarde = "Jonaitis"
+        }
+
+        console.log(pavarde);
+
+        
+
+    </script>
+</body>
+</html>

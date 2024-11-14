@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciklai (Loop)</title>
+</head>
+<body>
+    <script>
+        // Cikliai būna dviejų rūšių:
+        // Iteraciniai
+        // Rekursiniai
+
+        // While ciklo aprašymas
+        // while(false) {
+        //     console.log('Ciklas veikia');
+        // }
+
+        // Begalinis ciklas:
+        // while(true) {
+        //     console.log('Begalinis Ciklas veikia');
+        // }
+
+        // Increment (Inkrementas)
+
+        console.log('---PIRMAS PAVYZDYS---');
+
+        let i = 0;
+
+        while(i < 10) {
+            // Cikle aprašyti veiksmai yra Iteracija (Iteration)
+            console.log(i);
+
+            i++; 
+        }
+
+        // Ką atliekame su ciklo pagalba:
+        // let i = 0;
+
+        // console.log(i);
+        // i++;
+        // console.log(i);
+        // i++;
+        // console.log(i);
+        // i++;
+        // console.log(i);
+        // i++;
+        // console.log(i);
+        // i++;
+        // console.log(i);
+        // i++;
+        // console.log(i);
+        // i++;
+        // console.log(i);
+        // i++;
+        // console.log(i);
+        // i++;
+        // console.log(i);
+        // i++;
+
+        console.log('---ANTRAS PAVYZDYS---');
+        
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // Generuokite atsitiktinius skaičiuos nuo 0 iki 100 ir sustabdykite ciklą jei iškrito 0
+
+        let veikia = true;
+
+        while(veikia) {
+            let skaicius = random(0, 100);
+
+            console.log(skaicius)
+
+            if(skaicius === 0)
+                veikia = false;
+        }
+
+        console.log('---TRECIAS PAVYZDYS---');
+        
+        i = 0; //Norint naudoti tą patį kintamajį reikia atstatyi jo originalią reikšmę
+
+        while(i < 10) {
+            // Cikle aprašyti veiksmai yra Iteracija (Iteration)
+            console.log(i);
+
+            i++; 
+        }
+
+        console.log(i);
+
+        console.log('---KETVIRTAS PAVYZDYS---');
+
+        // Pirmoje pozicijoje nurodome savo kintamaji
+        // Antroje sąlygą
+        // Trečioje ką darysime su kintamuoju
+        for(let i = 0; i < 10; i++) {
+            console.log(i);
+        }
+
+        console.log('---PENKTAS PAVYZDYS---');
+
+        for(let i = 9; i >= 0; i--) {
+            console.log(i);
+        }
+
+        console.log('---PENKTAS PAVYZDYS---');
+        
+        // Spausdiname kas antrą skaičių
+
+        for(let i = 0; i < 10; i += 2) {
+            console.log(i);
+        }
+
+        // Klaida:
+        // for(i < 10) {
+        // }
+
+        // Begalinis ciklas:
+        // for(;;) {
+        //     console.log('Veikia')
+        // }
+
+        console.log('---PENKTAS PAVYZDYS---');
+
+        let nuliai = 0, vienetai = 0, dvejetai = 0;
+
+        for(let i = 0; i < 100000; i++) {
+            let skaicius = random(0, 2);
+
+            if(skaicius === 0) {
+                nuliai++;
+            }
+
+            if(skaicius === 1) {
+                vienetai++;
+            }
+
+            if(skaicius === 2) {
+                dvejetai++;
+            }
+        }
+
+        console.log(
+            'Nuliai:', nuliai, 
+            'Vienetai:', vienetai, 
+            'Dvejetai:', dvejetai
+        );
+
+        
+    </script>
+</body>
+</html>

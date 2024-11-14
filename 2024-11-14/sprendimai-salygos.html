@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprendimai</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // Deklaruojami kintamieji vienoje eilutėje be priskirtos reikšmės
+        let pirmas, antras, trecias, ketvirtas, max, min;
+
+        console.log('----PIRMA UŽDUOTIS-----');
+
+        // Sukurkite tris kintamuosius ir jiems priskirkite atsitiktines reikšmes nuo 0 iki 25. Raskite ir atspausdinkite kintamąjį turintį vidurinę reikšmę. 
+        // Pvz duoti skaičiai: 14, 5, 25. Vidurinis skaičius: 14
+
+        pirmas = random(0, 100) //0
+        antras = random(0, 100) //0
+        trecias = random(0, 100) //0
+
+        max = pirmas;
+        min = pirmas;
+
+        if(antras > max) {
+            max = antras;
+        }
+
+        if(trecias > max) {
+            max = trecias;
+        }
+
+        if(antras < min) {
+            min = antras;
+        }
+
+        if(trecias < min) {
+            min = trecias;
+        }
+
+        // console.log(max, min)
+
+        console.log(pirmas, antras, trecias)
+
+        console.log((pirmas + antras + trecias) - (min + max))
+
+        console.log('----ANTRA UŽDUOTIS-----');
+
+        // Sukurkite keturis kintamuosius su reikšmėmis nuo 0 iki 2. Suskaičiuokite kiek yra nulių, vienetų ir dvejetų. Patikrinkite kodo veikimą su random() funkcija. 
+    
+        pirmas = random(0, 2)
+        antras = random(0, 2)
+        trecias = random(0, 2)
+        ketvirtas = random(0, 2)
+
+        
+        // let nuliai = 0;
+        // let vienetai = 0;
+        // let dvejetai = 0;
+
+        let nuliai = 0, vienetai = 0, dvejetai = 0;
+
+        if(pirmas === 0) {
+            nuliai++;
+        }
+
+        if(antras === 0) {
+            nuliai++;
+        }
+
+        if(trecias === 0) {
+            nuliai++;
+        }
+
+        if(ketvirtas === 0) {
+            nuliai++;
+        }
+
+        if(pirmas === 1) {
+            vienetai++;
+        }
+
+        if(antras === 1) {
+            vienetai++;
+        }
+
+        if(trecias === 1) {
+            vienetai++;
+        }
+
+        if(ketvirtas === 1) {
+            vienetai++;
+        }
+
+        if(pirmas === 2) {
+            dvejetai++;
+        }
+
+        if(antras === 2) {
+            dvejetai++;
+        }
+
+        if(trecias === 2) {
+            dvejetai++;
+        }
+
+        if(ketvirtas === 2) {
+            dvejetai++;
+        }
+
+        console.log(
+            'Skaičiai:', pirmas, antras, trecias, ketvirtas, 
+            'Nuliai:', nuliai, 'Vienetai:', vienetai, 
+            'Dvejetai:', dvejetai
+        );
+
+        console.log('----TRECIA UŽDUOTIS-----');
+
+        // Sukurkite ir atspausdinkite 3 skaičius nuo -10 iki 10. Skaičiai mažesni už 0 turi būti  laužtiniuose skliaustuose [], 0 -  (), didesni už 0 {}.
+
+        pirmas = random(-10, 10);
+        antras = random(-10, 10);
+        trecias = random(-10, 10);
+
+        // Jeigu atliekamas vienos eilutės veiksmas riestiniai skliaustai yra neprivalomi
+        if(pirmas < 0) 
+            pirmas = '[' + pirmas + ']';
+            // pirmas = `[${pirmas}]`
+        
+        if(antras < 0) 
+            antras = '[' + antras + ']';
+        
+        if(trecias < 0) 
+            trecias = '[' + trecias + ']';
+
+        if(pirmas === 0) 
+            pirmas = '(' + pirmas + ')';
+        
+        if(antras === 0) 
+            antras = '(' + antras + ')';
+        
+        if(trecias === 0) 
+            trecias = '(' + trecias + ')';
+
+        if(pirmas > 0) 
+            pirmas = '{' + pirmas + '}';
+        
+        if(antras > 0) 
+            antras = '{' + antras + '}';
+        
+        if(trecias > 0) 
+            trecias = '{' + trecias + '}';
+
+        console.log(pirmas, antras, trecias);
+
+        // Įmonė parduoda žvakes po 1 EUR. Perkant daugiau kaip 1000 
+        // vienetų taikoma 3 % nuolaida, daugiau kaip 2000 vienetų- 4 % 
+        // nuolaida. Parašykite programą, kuri skaičiuos žvakių kainą 
+        // ir atspausdintų atsakymą kiek žvakių ir kokia kaina perkama. 
+        // Žvakių kiekį generuokite random() funkcija nuo 5 iki 3000.
+
+        console.log('----KETVIRTA UŽDUOTIS-----');
+
+        let kiekis = random(5, 3000);
+        let nuolaida = 0;
+
+        if(kiekis > 1000) {
+            nuolaida = 0.03
+        }
+
+        if(kiekis > 2000) {
+            nuolaida = 0.04
+        }
+
+        // let suma = kiekis - kiekis * nuolaida;
+
+        console.log(
+            'Perkamas kiekis:', kiekis, 
+            'Galutinė suma:', (kiekis - kiekis * nuolaida).toFixed(2)
+        );
+
+        console.log('----PENKTA UŽDUOTIS-----');
+        
+        // Naudokite funkcija random() Sukurkite tris kintamuosius su atsitiktinėmis 
+        // reikšmėmis nuo 0 iki 100. Paskaičiuokite jų aritmetinį vidurkį. 
+        // Ir aritmetinį vidurkį atmetus tas reikšmes, kurios yra mažesnės 
+        // nei 10 arba didesnės nei 90. Abu vidurkius atspausdinkite. Rezultatus 
+        // apvalinkite iki sveiko skaičiaus.
+
+        pirmas = random(0, 100)
+        antras = random(0, 100)
+        trecias = random(0, 100)
+
+        console.log('Skaiciai:', pirmas, antras, trecias);
+        console.log('Vidurkis:', ((pirmas + antras + trecias) / 3).toFixed(2));
+
+        
+        let suma = 0;
+        let dalikliai = 0;
+
+        if(pirmas >= 10 && pirmas <= 90) {
+            suma += pirmas;
+            dalikliai++;
+        }
+
+        if(antras >= 10 && antras <= 90) {
+            suma += antras;
+            dalikliai++;
+        }
+
+        if(trecias >= 10 && trecias <= 90) {
+            suma += trecias;
+            dalikliai++;
+        }
+
+
+        console.log(suma, dalikliai);
+        console.log('Vidurkis atmetus skaičius:', (suma / dalikliai).toFixed(0));
+
+</script>
+</body>
+</html>

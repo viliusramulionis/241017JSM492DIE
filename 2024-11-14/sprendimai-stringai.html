@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprendimai Stringai</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+
+        // Sukurti kintamąjį su stringu: “An American in Paris”. 
+        // Jame visas “a” (didžiąsias ir mažąsias) pakeisti 
+        // žvaigždutėm “*”.  Rezultatą atspausdinti.
+        // Rezultatas: *n *meric*n in P*ris
+
+        let stringas = 'An American in Paris';
+
+        // stringas = stringas.replaceAll('a', '*');
+        // stringas = stringas.replaceAll('A', '*');
+        // console.log(stringas);
+
+        console.log(stringas.replaceAll('a', '*').replaceAll('A', '*'));
+
+        console.log(stringas.replaceAll(/[a]/gi, '*'));
+
+        // Balsių ištrynimas
+        console.log(
+            stringas
+            .replaceAll('a', '')
+            .replaceAll('e', '')
+            .replaceAll('i', '')
+            .replaceAll('o', '')
+            .replaceAll('u', '')
+            .replaceAll('A', '')
+            .replaceAll('E', '')
+            .replaceAll('I', '')
+            .replaceAll('O', '')
+            .replaceAll('U', '')
+        )
+
+        console.log(stringas.replaceAll(/[aeiou]/gi, ''))
+
+        // Sukurti kintamąjį su stringu: “An American in Paris”. Suskaičiuoti visas “a” (didžiąsias ir mažąsias) raides. Rezultatą atspausdinti.
+        let buvesIlges = stringas.length
+
+        stringas = stringas.replaceAll('a', '').replaceAll('A', '');
+
+        console.log(buvesIlges - stringas.length);
+
+        // Parašyti kodą, kuris generuotų atsitiktinį stringą iš lotyniškų mažųjų raidžių. Stringo ilgis 3 simboliai.
+        
+        let raides = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.toLowerCase()
+
+        // stringas = raides[random(0, raides.length - 1)] + raides[random(0, raides.length - 1)] + raides[random(0, raides.length - 1)] 
+        
+        stringas =  raides[random(0, raides.length - 1)] 
+        stringas += raides[random(0, raides.length - 1)] 
+        stringas += raides[random(0, raides.length - 1)] 
+
+        console.log(stringas)
+    </script>
+</body>
+</html>
