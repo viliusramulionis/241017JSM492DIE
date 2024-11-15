@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprendimai</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        console.log("---PIRMA UZDUOTIS----")
+        // Sukurkite ciklą kuris atspausdintų žodį “labas” 10 kartų.
+        for(let i = 0; i < 10; i++) {
+            console.log("Labas");
+        }
+
+        console.log("---ANTRA UZDUOTIS----")
+        // Sukurkite ciklą kuris atspausdintų skaičius nuo 0 iki 9.
+
+        for(let i = 0; i < 10; i++) {
+            console.log(i);
+        }
+
+        // Atspausdinkite kas antrą skaičių nuo 10 iki 50 (lyginius skaičius);
+        console.log("---TRECIA UZDUOTIS----");
+
+        // for(let i = 10; i <= 50; i++) {
+        //     if(i % 2 === 0) {
+        //         console.log(i);
+        //     }
+        // }
+
+        for(let i = 10; i <= 50; i += 2) {
+            console.log(i);
+        }
+
+        console.log("---KETVIRTA UZDUOTIS----");
+
+        // Atspausdinkite kas antrą skaičių nuo 10 iki 50 (lyginius skaičius). Jei skaičius dalinasi iš 10 be liekanos jo nespausdinkite. 
+        
+        for(let i = 10; i <= 50; i += 2) {
+            if(i % 10 !== 0) {
+                console.log(i);
+            }
+        }
+
+        console.log("---SESTA UZDUOTIS----");
+
+        // Sugeneruokite 300 atsitiktinių skaičių nuo 0 iki 300, 
+        // atspausdinkite juos atskirtus tarpais ir suskaičiuokite 
+        // kiek tarp jų yra didesnių už 150.  Skaičiai didesni nei 
+        // 275 turi būti atspausdinti skliausteliuose” [ ] “.
+
+        let rezultatas = "";
+        let skaiciuotuvas = 0;
+
+        for(let i = 0; i < 10; i++) {
+            let skaicius = random(0, 300);
+
+            if(skaicius > 275) {
+                rezultatas += "[" + skaicius + "] ";
+            } else {
+                rezultatas += skaicius + " "
+            }
+            
+            if(skaicius > 150) {
+                skaiciuotuvas++;
+            }
+        }
+
+        console.log(rezultatas);
+        console.log("Reikšmių didesnių nei 150 yra", skaiciuotuvas);
+
+        console.log("---SESTA UZDUOTIS----");
+
+        // Vienoje eilutėje atspausdinkite visus skaičius nuo 1 iki 3000, 
+        // kurie dalijasi iš 77 be liekanos. Skaičius atskirkite kableliais. 
+        // Po paskutinio skaičiaus kablelio neturi būti.
+
+        rezultatas = ""
+
+        // for(let i = 1; i <= 3000; i++) {
+        //     if(i % 77 === 0) {
+        //         rezultatas += i;
+
+        //         if(i !== 2926) {
+        //             rezultatas += ", ";
+        //         }
+        //     }
+        // }
+
+        for(let i = 1; i <= 3000; i++) {
+            if(i % 77 === 0) {
+
+                if( i !== 77) {
+                    rezultatas += ", ";
+                }
+
+                rezultatas += i;
+            }
+        }
+
+        console.log(rezultatas);
+
+        // Nupieškite kvadratą iš “*”, kurio kraštines sudaro 25 “*” simboliai.
+        
+        // let dydis = 5;
+
+        // for(let i = 1; i <= dydis * dydis; i++) {
+        //     document.write("*");
+            
+        //     if(i % dydis === 0) {
+        //         document.write('<br>');
+        //     }
+        // }
+
+        let dydis = 5;
+
+        for(let eilute = 0; eilute < dydis; eilute++) {
+            // Spausdina eilutę
+            
+            for(let stulpelis = 0; stulpelis < dydis; stulpelis++) {
+                // Spausdina zvaizdutes
+
+                document.write('*')
+            }
+
+            document.write('<br>');
+        }
+    </script>
+</body>
+</html>

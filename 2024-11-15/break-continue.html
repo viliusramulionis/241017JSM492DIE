@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break, continue</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // Atspausdinkite skaičius nuo 0 iki 50, iki kol iškris skaičius 27
+        console.log('-----PIRMAS PAVYZDYS-------')
+        let veikia = true;
+
+        while(veikia) {
+            let skaicius = random(0, 50);
+
+            if(skaicius === 27) {
+                veikia = false;
+            }
+
+            console.log(skaicius);
+        }
+        
+
+        // Atspausdinkite kas penktą skaičių nuo 0 iki 100
+        console.log('-----ANTRAS PAVYZDYS-------')
+
+        let i = 0;
+
+        while(i <= 100) {
+            if(i % 5 === 0) {
+                console.log(i)
+            }
+
+            i++;
+        }
+
+        console.log('-----TRECIAS PAVYZDYS-------')
+
+        // Sukurkite ciklą kuris suktųsi nuo 0 iki 20. Suskaičiuokite, kiek kartų kintamasis 
+        // i turėjo porinę reikšmę;
+
+        i = 0
+        let skaiciuotuvas = 0;
+
+        while(i < 20) {
+            if(i % 2 === 0) {
+                skaiciuotuvas++;
+            }
+
+            i++;
+        }
+
+        console.log(skaiciuotuvas);
+
+        
+        console.log('-----KETVIRTAS PAVYZDYS-------')
+
+        skaiciuotuvas = 0
+
+        for(let i = 0; i < 20; i++) {
+            if(i % 2 === 0) {
+                skaiciuotuvas++;
+            }
+        }
+
+        // Atspausdinkite kas penktą skaičių nuo 0 iki 100
+
+        console.log('-----PENKTAS PAVYZDYS-------')
+
+        // continue - komanda galioja tik cikluose
+        // continue - reiškia perėjimą į sekančią iteraciją 
+        
+        i = 0;
+
+        while(i <= 100) {
+            
+            i++;
+            
+            if(i % 5 !== 0)  
+                continue;
+
+            console.log(i);
+            // ... 
+            // ... 
+            // ... 
+            // ... 
+            // if() {
+            //    ...
+            //    ...
+            //    if() {
+            //      ...
+            //      ...
+            //      ...
+            //      ...
+            //    }
+            //    ...
+            //    ...
+            //    ...
+            // }
+            // ... 
+            // ... 
+            // ... 
+            // ... 
+
+        }
+
+        console.log('-----ŠEŠTAS PAVYZDYS-------')
+
+        for(let i = 0; i <= 100; i++) {
+            if(i % 5 !== 0)  
+                continue;
+
+            console.log(i);
+        }
+
+        console.log("----SEPTINTAS PAVYZYDYS------")
+
+        // break - komanda nutraukia ciklo veikimą
+
+        while(true) {
+            let skaicius = random(0, 50);
+
+            if(skaicius === 27) {
+                break;
+            }
+
+            console.log(skaicius);
+        }
+    </script>
+</body>
+</html>
