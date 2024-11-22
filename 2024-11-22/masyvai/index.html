@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masyvai (Array)</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+
+        // Kiekviena reikšmė (value) turi savo indeksą (index) kurie yra priskiriami pagal nutylėjimą
+        console.log(["ABCD", 25, 48, 11, 32]);
+
+        console.log("Labas Rytas".length);
+
+        // Norint paimti vieną reikšmę iš masyvo:
+        let masyvas = [25, 10, 35, 11];
+        
+        // Norint paimti pirmą masyvo reikšmę
+        console.log(masyvas[0]);
+    
+        let stringas = "25, 10, 35, 11";
+        
+        let skaicius = "";
+
+        // for(let i = 0; i < stringas.length; i++) {
+        //     if(stringas[i] === ',') {
+        //         console.log(skaicius);
+        //     } else {
+        //         skaicius += stringas[i];
+        //     }
+        // }
+
+        masyvas = [25, 10, 35, 11];
+
+        for(let i = 0; i < masyvas.length; i++) {
+            console.log(masyvas[i]);
+        }
+
+        masyvas = [false, [ 15, 25, 35, 15], "LABAS", 15];
+
+        // Norint paimti reikšmę iš multidimencinio masyvo
+        console.log(masyvas[1][2]);
+
+        // Norint pakeisti reikšmę masyve
+        masyvas = [15, 25, 35, 45]
+                   
+        masyvas[1] = 55;
+
+        console.log(masyvas);
+
+        stringas = "Brangioji aš sumažinau vaikus";
+
+        // STRINGŲ MODIFIKUOTI NEGALIME
+        stringas[6] = "C"
+
+        console.log(stringas);
+
+        // const x = "A";
+
+        // Meta klaidą nes bandome pakeisti konstantos reikšmę:
+        // x = "B";
+
+        // console.log(x);
+
+        console.log(typeof []);
+
+        const array = [];
+
+        // Negalime konstantai priskirti naujos reikšmės
+        // array = []; // Klaida
+
+        // Norint pridėti į masyvą naują reikšmę:
+        array[0] = "Labas";
+
+        console.log(array);
+
+        // Norint ištrinti reikšmę:
+        // Nevartotinas variantas:
+
+        array[1] = "Goodbye";
+
+        delete array[1];
+
+        console.log(array);
+
+        let naujasMasyvas = [10, 25, 30];
+
+        for(let i = 0; i < naujasMasyvas.length; i++) {
+            console.log(naujasMasyvas[i]);
+        }
+
+        // Norint ištrinti reikšmę su pirmu indeksu iš masyvo:
+
+        naujasMasyvas.splice(1, 1);
+
+        console.log(naujasMasyvas);
+
+        // Sukurkite ir atspausdinkite 100 skaičių nuo -10 iki 10. Skaičiai mažesni už 0 turi būti  laužtiniuose skliaustuose [], 0 -  (), didesni už 0 {}.
+        const skaiciai = [];
+
+        for(let i = 0; i < 100000; i++) {
+            skaiciai[i] = random(-10, 10);
+        }
+
+        
+        for(let i = 0; i < skaiciai.length; i++) {
+            if(skaiciai[i] < 0) 
+                skaiciai[i] = '[' + skaiciai[i] + ']';
+            
+            if(skaiciai[i] === 0) 
+                skaiciai[i] = '(' + skaiciai[i] + ')';
+            
+            if(skaiciai[i] > 0) 
+                skaiciai[i] = '{' + skaiciai[i] + '}';
+        }
+        
+        console.log(skaiciai);
+    </script>
+</body>
+</html>

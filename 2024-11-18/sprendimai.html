@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprendimai</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // Įstržainės:
+        dydis = 25;
+
+        for(let y = 0; y < dydis; y++) {
+            for(let x = 0; x < dydis; x++) {
+                if(x === y || x === dydis - 1 - y) {
+                    document.write('5');
+                } else {
+                    document.write('*');
+                }
+            }
+
+            document.write("<br>");
+        }
+
+        // Metam monetą. Monetos kritimo rezultatą imituojam random() funkcija, 
+        // kur 0 yra herbas, o 1 - skaičius. Monetos metimo rezultatus išvedame 
+        // į ekraną atskiroje eilutėje: “S” jeigu iškrito skaičius ir “H” jeigu herbas. 
+        // Su	programuokite tris skirtingus scenarijus kai monetos metimą stabdome:
+
+        // Iškritus herbui;
+        let rezultatas = "";
+
+        while(true) {
+            skaicius = random(0, 1);
+
+            if(skaicius === 0) {
+                rezultatas += 'H';
+                break;
+            } else {
+                rezultatas += 'S';
+            }
+        }
+
+        console.log(rezultatas);
+
+        // Tris kartus iškritus herbui;
+
+        rezultatas = "";
+        let skaiciuotuvas = 0;
+
+        while(skaiciuotuvas < 3) {
+            skaicius = random(0, 1);
+
+            if(skaicius === 0) {
+                rezultatas += 'H';
+                skaiciuotuvas++;
+            } else {
+                rezultatas += 'S';
+            }
+        }
+
+        console.log(rezultatas);
+
+        // Tris kartus iš eilės iškritus herbui;
+
+        rezultatas = "";
+        skaiciuotuvas = 0;
+
+        while(skaiciuotuvas < 3) {
+            skaicius = random(0, 1);
+
+            if(skaicius === 0) {
+                rezultatas += 'H';
+                skaiciuotuvas++;
+            } else {
+                rezultatas += 'S';
+                skaiciuotuvas = 0;
+            }
+        }
+
+        console.log(rezultatas);
+
+        // Kazys ir Petras žaidžia šaškėm. Petras surenka taškų kiekį nuo 10 iki 20, 
+        // Kazys surenka taškų kiekį nuo 5 iki 25. Vienoje eilutėje išvesti žaidėjų 
+        // vardus su taškų kiekiu ir “Partiją laimėjo: ​laimėtojo vardas​”. 
+        // Taškų kiekį generuokite funkcija random(). Žaidimą laimi tas, 
+        // kas greičiau surenka 222 taškus. Partijas kartoti tol, kol kažkuris 
+        // žaidėjas pirmas surenka 222 arba daugiau taškų.
+
+        let petroBendriTaskai = 0;
+        let kazioBendriTaskai = 0;
+
+        while(petroBendriTaskai < 222 && kazioBendriTaskai < 222) {
+            let petroTaskai = random(10, 20);
+            let kazioTaskai = random(5, 25);
+
+            petroBendriTaskai += petroTaskai;
+            kazioBendriTaskai += kazioTaskai;
+
+            if(petroTaskai > kazioTaskai) {
+                console.log("Partiją laimėjo: Petras");
+            } else if(petroTaskai === kazioTaskai) {
+                console.log("Įvyko lygiosios");
+            } else {
+                console.log("Partiją laimėjo: Kazys");
+            }
+        }
+
+        if(petroBendriTaskai > kazioBendriTaskai) {
+                console.log("Žaidimą laimėjo: Petras");
+            } else if(petroBendriTaskai === kazioBendriTaskai) {
+                console.log("Žaidime Įvyko lygiosios");
+            } else {
+                console.log("Žaidimą laimėjo: Kazys");
+        }
+
+        // Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite pasinaudodami random() funkcija. 
+        // Vinies ilgis 8.5cm (pilnai sulenda į lentą).
+        // “Įkalkite” 5 vinis mažais smūgiais. Vienas smūgis vinį įkala 5-20 mm. 
+        // Suskaičiuokite kiek reikia smūgių.
+
+        console.log('---VINYS-----');
+
+        let smugiai = 0;
+
+        for(let i = 0; i < 5; i++) {
+            let ilgis = 85;
+            
+            while(ilgis > 0) {
+                ilgis -= random(5, 25);
+                smugiai++;
+            }
+        }
+
+        console.log(`Įkalti 5 vinis mažais smūgiais prireikė ${smugiai} smūgių`);
+
+
+        // “Įkalkite” 5 vinis dideliais smūgiais. Vienas smūgis vinį įkala 20-30 mm, 
+        // bet yra 50% tikimybė jog bus nepataikyta į vinį. (pasinaudokite random() funkcija).
+    
+        smugiai = 0;
+
+        for(let i = 0; i < 5; i++) {
+            let ilgis = 85;
+            
+            while(ilgis > 0) {
+                if(random(0, 1) === 0) {
+                    ilgis -= random(20, 30);
+                }
+                smugiai++;
+            }
+        }
+
+        console.log(`Įkalti 5 vinis dideliais smūgiais prireikė ${smugiai} smūgių`);
+    </script>
+</body>
+</html>

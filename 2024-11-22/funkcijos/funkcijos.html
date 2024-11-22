@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcijos</title>
+</head>
+<body>
+    <script>
+            function dalijasiIsSeptynesdesimtSeptyniu() {
+                // Function scope
+                let rezultatas = ""
+
+                for(let i = 1; i <= 3000; i++) {
+                    if(i % 77 === 0) {
+
+                        if( i !== 77) {
+                            rezultatas += ", ";
+                        }
+
+                        rezultatas += i;
+                    }
+                }
+
+                console.log(rezultatas);
+            }
+
+            // Skliausteliai nurodo funkcijos iniciavimą
+            dalijasiIsSeptynesdesimtSeptyniu();
+            dalijasiIsSeptynesdesimtSeptyniu();
+            dalijasiIsSeptynesdesimtSeptyniu();
+
+            // Funkcijos pavyzdys
+            function funkcija(parametras, parametras2) {
+                console.log(parametras, parametras2);
+            }
+
+            funkcija(); //Klaidos nėra
+
+            function suma1(pirma, antra) {
+                return pirma + antra;
+            }
+
+            console.log(suma1(15, 20));
+
+
+            function suma2(pirma, antra) {
+                console.log(pirma + antra);
+            }
+
+            suma2(15, 25);
+            
+            // Return komanda nurodo grąžinamą rezultatą iš funkcijos
+            let rezultatas = suma1(25, 45) + 10;
+
+            // Reikšmė pagal nutylėjimą (default)
+
+            function suma3(a = 10, b = 20) {
+                return a + b;
+            }
+
+            console.log(suma3(15, 22));
+            console.log(suma3());
+            console.log(suma3(18, 55));
+
+            
+            function suma4(...argumentai) {
+                // ... spread operatorius 
+                console.log(argumentai);
+            }
+
+            suma4(10, 25, 34, 45, 5, 10, 15);
+
+            
+
+    </script>
+</body>
+</html>
