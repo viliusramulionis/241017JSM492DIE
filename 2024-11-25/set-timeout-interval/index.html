@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout, setInterval</title>
+</head>
+<body>
+    <div class="result"></div>
+    <script>
+        // setTimeout() - uždelsto veikimo veiksmo sukūrimas
+        // pirmas perduodamas parametras yra funkciją kurią norėtume atlikti
+        // antras parametras - laiko tarpas ms (1000ms = 1s) 
+
+        setTimeout(() => {
+           console.log('Suveikė') 
+        }, 5000);
+
+        let skaiciuotuvas = 0;
+
+        // setInterval() - kartoja veiksmą, kas nurodytą laiko tarpą
+        let pirmasIntervalas = setInterval(() => {
+            console.log('Tiksi kas sekundę', skaiciuotuvas);
+            skaiciuotuvas++;
+
+            if(skaiciuotuvas > 5) {
+                clearInterval(pirmasIntervalas);
+            }
+        }, 1000);
+        
+        let antrasIntervalas = setInterval(() => {
+            console.log('Tiksi kas tris sekundes');
+        }, 3000);
+
+        // clearInterval() - sunaikiną intervalą
+        clearInterval(antrasIntervalas);
+        
+        
+    </script>
+</body>
+</html>

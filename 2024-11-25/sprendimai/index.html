@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprendimai</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        console.log("---PIRMA UŽDUOTIS----");
+        // Sukurkite masyvą iš dešimties augalų pavadinimų.
+        const augalai = ["Eglė", "Pūšis", "Kedras", "Beržas", "Liepa", "Tuja", "Kaštonas", "Ąžuolas", "Rožė", "Lelija"];
+        // Pirmas augalas:
+        // console.log(augalai[0]); 
+
+        console.log("---ANTRA UŽDUOTIS----");
+        // Atspausdinkite kiekvieną pirmo uždavinio augalą atskiroje eilutėje.
+        // for(let i = 0; i < augalai.length; i++) {
+        //     console.log(augalai[i]);
+        // }
+
+        // Su for of ciklu:
+        for(const reiksme of augalai) {
+            console.log(reiksme);
+        }
+
+        // Su for in ciklu:
+        // Atspausdinkite keikviena pirmo uždavinio augalą ir jo indeksą:
+
+        // for(let i = 0; i < augalai.length; i++) {
+        //     console.log(i, augalai[i]);
+        // }
+
+        for(const indeksas in augalai) {
+            console.log(indeksas, augalai[indeksas]);
+        }
+
+        console.log("---TRECIA UŽDUOTIS----");
+
+        // Atspausdinkite pirmo uždavinio kiekvieną augalą pradedant nuo paskutinio, ir baigiant pirmuoju.
+
+        // augalai.reverse();
+
+        // for(const reiksme of augalai) {
+        //     console.log(reiksme);
+        // }
+
+        for(let i = augalai.length - 1; i >= 0; i--) {
+            console.log(augalai[i]);
+        }
+
+        console.log(augalai);
+
+        console.log("---KETVIRTA UŽDUOTIS----");
+
+        // Suskaičiuokite kiek pirmo uždavinio masyve yra žodžių 
+        // trumpesnių nei 5 simboliai, ir kiek ilgesnių nei 7 simboliai. 
+
+        let trupesniNeiPenki = 0;
+        let ilgesniNeiSeptyni = 0;
+        
+        for(const augalas of augalai) {
+            if(augalas.length < 5) {
+                trupesniNeiPenki++;
+            }
+
+            if(augalas.length > 7) {
+                ilgesniNeiSeptyni++;
+            }
+        }
+
+        console.log(trupesniNeiPenki, ilgesniNeiSeptyni);
+
+        console.log("---PENKTA UŽDUOTIS----");
+
+        // Suskaičiuokite kiek pirmo uždavinio masyve yra žodžių ilgesnių 
+        // nei 5 simboliai bet trumpesnių  nei 10 simboliai. 
+
+        let rezultatas = 0;
+
+        for(const augalas of augalai) {
+            if(augalas.length > 5 && augalas.length < 10) {
+                rezultatas++;
+            }
+        }
+
+        console.log(rezultatas);
+
+        // Norint i masyva prideti naujas reiksmes:
+        // const masyvas = ["Hello"];
+
+        // // Pirmas variantas:
+        // masyvas[masyvas.length] = "Goodbye";
+        // masyvas[masyvas.length] = "Hallo";
+        // masyvas[masyvas.length] = "World";
+
+        // // Antras variantas:
+
+        // masyvas.push("Goodbye", "Hallo", "World");
+
+        // console.log(masyvas);
+
+        // Sugeneruokite masyvą iš 30 elementų (indeksai nuo 0 iki 29), 
+        // kurių reikšmės yra atsitiktiniai skaičiai nuo 5 iki 25.
+
+        console.log("---SUNKESNI 1:----");
+
+        const masyvas = [];
+
+        for(let i = 0; i < 30; i++) {
+            masyvas.push(random(5, 25));
+        }
+
+        console.log(masyvas);
+
+        let didesniNeiDesimt = 0;
+
+        console.log("---SUNKESNI 2 A):----");
+
+        // Suskaičiuokite kiek masyve yra reikšmių didesnių už 10;
+        for(const reiksme of masyvas) {
+            if(reiksme > 10) {
+                didesniNeiDesimt++;
+            }
+        }
+
+        console.log("Reikšmių didesnių nei 10 yra:", didesniNeiDesimt);
+
+        console.log("---SUNKESNI 2 B):----");
+
+        // const laikinas = [10, 25, 18];
+
+        // let max = 0;
+
+        // if(laikinas[0] > max) {
+        //     max = laikinas[0];
+        // }
+
+        // if(laikinas[1] > max) {
+        //     max = laikinas[1];
+        // }
+
+        // if(laikinas[2] > max) {
+        //     max = laikinas[2];
+        // }
+
+        // console.log(max);
+
+        let max = 0;
+
+        for(const reiksme of masyvas) {
+            if(reiksme > max) {
+                max = reiksme;
+            }
+        }
+
+        console.log("Math max didziausias skaicius:", Math.max(...masyvas));
+
+        console.log("Didžiausia reikšmė yra:", max);
+
+        let didziausioIndeksas = [];
+
+        for(const indeksas in masyvas) {
+            if(masyvas[indeksas] === max) {
+                didziausioIndeksas.push(indeksas);
+            }
+        }
+
+        console.log(didziausioIndeksas);
+
+        
+
+
+    </script>
+</body>
+</html>

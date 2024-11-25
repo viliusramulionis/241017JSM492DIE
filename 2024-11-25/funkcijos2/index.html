@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcijos2</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        function funkcijosPavadinimas(parametras) {
+            // Funkcija priima parametrus
+            return parametras * 2;
+        }   
+
+        let pirmasSkaicius = funkcijosPavadinimas(8);
+        let antrasSkaicius = funkcijosPavadinimas(99);
+
+        console.log(pirmasSkaicius, antrasSkaicius);
+
+        function didziausioPaieska(masyvas) {
+            let max = 0;
+
+            for(const reiksme of masyvas) {
+                if(reiksme > max) {
+                    max = reiksme;
+                }
+            }
+
+            return max;
+        }
+
+        console.log(didziausioPaieska([18, 5, 65, 24]));
+        console.log(didziausioPaieska([88, 2, 14, 22]));
+        console.log(didziausioPaieska([6, 2, 16, 5]));
+
+        let skaicius = random(2, 99);
+
+        if(skaicius > 10 && skaicius < 55) {
+            // Atliekame kodą
+            // ...
+            // ...
+            // ...
+            // ...
+            // if() {
+                // Atliekame kodą
+                // ...
+                // ...
+                // ...
+                // ...
+                // ...
+                // ...
+                // ...
+            //}
+            // ...
+            // ...
+            // ...
+            // ...
+            // ...
+            // ...
+            // ...
+            // ...
+            // ...
+            // ...
+            console.log('Veikia');
+        }
+
+        function veiksmuAtlikimas(skaicius) {
+            // Guard sukūrimas
+            if(skaicius <= 10) 
+                return 'Skaičius yra per žemas';                
+
+            if(skaicius >= 55)
+                return 'Skaičius yra per didelis';
+
+            // Atliekame kodą
+            // ...
+            // ...
+            // ...
+            // ...
+            // if() {
+                // Atliekame kodą
+                // ...
+                // ...
+                // ...
+                // ...
+                // ...
+                // ...
+                // ...
+            //}
+            // ...
+            // ...
+            // ...
+            // ...
+            // ...
+            // ...
+            // ...
+            // ...
+            // ...
+            // ...
+
+            return 'Skaičius tinkamas';
+        }
+
+        console.log(veiksmuAtlikimas(15));
+
+        
+        console.log(
+            typeof function() {
+                return 'Labai graži diena';
+            }
+        );  
+
+        // Anonymous function (Funkcija be pavadinimo)
+        (function() {
+            return 'Labai graži diena';
+        });
+
+        // Self invoking function (Savaime išsišaukianti funkcija)
+        (function(vardas) {
+            console.log('Sveiki, ' + vardas);
+        })('Jonas');
+
+        const suma = function(a, b) {
+            return a + b;
+        }
+
+        console.log(suma(15, 35));
+
+        // Vardinės funkcijos gali būti deklaruojamos bet kur dokumente
+
+        console.log(dalyba(15, 3));
+
+        function dalyba(a, b) {
+            return a / b;
+        }
+
+        // ARROW FUNKCIJOS:
+        // =>
+
+        const daugyba = (a, b) => {
+            return a * b;
+        }
+
+        console.log(daugyba(5, 25));
+
+        const masyvas = [15, 25, 35];
+
+        // Pagal pirmą masyvą pagaminkite naują masyvą, kurio reikšmės būtų prieš tai buvę skaičiai, padauginti iš dviejų
+            
+        // Būdas naudojant ciklą:
+        // const naujasMasyvas = [];
+
+        // for(const reiksme of masyvas) {
+        //     naujasMasyvas.push(reiksme * 2);
+        // }
+
+        // console.log(naujasMasyvas);
+
+        // PIRMAS PAVYZDYS:
+
+        // function callbackFunkcija(reiksme) {
+        //     return reiksme * 2;
+        // }
+
+        // const naujasMasyvas = masyvas.map(callbackFunkcija);
+
+        // console.log(naujasMasyvas);
+
+        // ANTRAS PAVYZDYS:
+
+        // const naujasMasyvas = masyvas.map(function(reiksme) {
+        //     return reiksme * 2;
+        // });
+
+        // console.log(naujasMasyvas);
+
+        // TRECIAS PAVYZDYS (Arrow funkcija):
+
+        // const naujasMasyvas = masyvas.map((reiksme) => {
+        //     return reiksme * 2;
+        // });
+
+        // console.log(naujasMasyvas);
+        
+        // KEVIRTAS PAVYZDYS: 
+        // JEIGU FUNKCIJOJE ATLIKEMAS VIENAS VEIKSMAS KURIS BUS GRĄŽINAMAS IŠ JOS,
+        // TUOMET TOKIU ATVEJU RIESTINIAI SKLIAUSTAI IR KOMANDA RETURN NEREIKALINGI
+
+        const naujasMasyvas = masyvas.map((reiksme) => reiksme * 2);
+
+        console.log(naujasMasyvas);
+
+        // Map metodo simuliacija:
+
+        function mapinimas(masyvas, callbackFunkcija) {
+            const rezultatas = [];
+            
+            for(const indeksas in masyvas) {
+                rezultatas.push(callbackFunkcija(masyvas[indeksas], indeksas, masyvas));
+            }
+
+            return rezultatas;
+        }
+
+        const mapintasMasyvas = mapinimas([2, 4, 8], function(reiksme) {
+            return reiksme * 2;
+        });
+
+        const mapintasMasyvas2 = mapinimas([2, 4, 8], function(reiksme, indeksas) {
+            return reiksme * indeksas;
+        });
+
+        const mapintasMasyvas3 = mapinimas([2, 4, 8], (reiksme, indeksas) => reiksme * 2 * indeksas);
+
+        console.log(mapintasMasyvas);
+        console.log(mapintasMasyvas2);
+        console.log(mapintasMasyvas3);
+
+        // Sąlyga: sukurkite masyvą pagal pateiktą: ["Labas", "Vakaras", "Lietuva"]
+        // Kurio reikšmės būtų masyve esančių stringų ilgiai
+
+        const stringuIlgiai = ["Labas", "Vakaras", "Lietuva"].map((zodis, indeksas) => zodis.length)
+
+        console.log(stringuIlgiai);
+        
+    </script>
+</body>
+</html>
