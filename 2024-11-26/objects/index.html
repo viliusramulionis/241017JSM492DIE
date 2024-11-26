@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objektai</title>
+</head>
+<body>
+    <script>
+        const objektas = {
+            // Objekte yra patalpinamos savybės (properties)
+            vardas: "Jonas",
+            vedes: false,
+            amzius: 44,
+            pomegiai: ["Slidinėjimas", "Šuoliai parašiutu"],
+            // Objekte patalpinta funkcija yra vadinama metodu
+            aprasymas: function() {
+                return `Žmogaus vardas ${this.vardas} (${this.amzius}), jis yra ${this.vedes ? 'vedęs' : 'nevedęs'}, pomėgiai ${this.pomegiai[0]} ir ${this.pomegiai[1]}`;
+            }
+        }
+
+        let vardas = "Aleksandras";
+
+        console.log(vardas);
+
+        console.log(objektas.vardas); //Norint pasiekti objekte patalpintą savybę
+        
+        console.log(objektas.aprasymas()); //Norint pasiekti metodą esantį objekte
+
+        
+        const objektas2 = {
+            // Objekte yra patalpinamos savybės (properties)
+            vardas: "Martynas",
+            vedes: true,
+            amzius: 24,
+            pomegiai: ["Maisto gaminimas", "Programavimas"],
+            // Objekte patalpinta funkcija yra vadinama metodu
+            aprasymas: function() {
+                return `Žmogaus vardas ${this.vardas} (${this.amzius}), jis yra ${this.vedes ? 'vedęs' : 'nevedęs'}, pomėgiai ${this.pomegiai[0]} ir ${this.pomegiai[1]}`;
+            }
+        }
+
+        console.log(objektas2.aprasymas());
+
+        String.prototype.convertToCamelCase = function () {
+            let result = "";
+            let words = this.split(" ");
+
+            for(const idx in words) {
+                let tempWord = words[idx].toLowerCase();
+                
+                if(+idx !== 0) 
+                    tempWord = tempWord[0].toUpperCase() + tempWord.slice(1);
+                
+                result += tempWord;
+            }
+
+            return result;
+        }
+
+
+        console.log(
+            "labas šaunusis PASAULI"
+            .convertToCamelCase()
+            .replace("a", "*")
+            .includes("Pasauli")
+        );
+
+        // Chaining
+        // "Labas".toLowerCase().replace().includes()
+
+        function convertToCamelCase(string) {
+            let result = "";
+            let words = string.split(" ");
+
+            for(const idx in words) {
+                let tempWord = words[idx].toLowerCase();
+                
+                if(+idx !== 0) 
+                    tempWord = tempWord[0].toUpperCase() + tempWord.slice(1);
+                
+                result += tempWord;
+            }
+
+            return result;
+        }
+
+        let zodis = convertToCamelCase("labas šaunusis PASAULI");
+
+        const naujasObjektas = {
+            produktas: [
+                {
+                    pavadinimas: 'Televizorius',
+                    kaina: 199.99,
+                    kiekis: 20
+                },
+                {
+                    pavadinimas: 'Televizorius',
+                    kaina: 199.99,
+                    kiekis: 20
+                },
+                {
+                    pavadinimas: 'Televizorius',
+                    kaina: 199.99,
+                    kiekis: 20
+                },
+                {
+                    pavadinimas: 'Televizorius',
+                    kaina: 199.99,
+                    kiekis: 20
+                },
+            ]
+        }
+
+    </script>
+</body>
+</html>

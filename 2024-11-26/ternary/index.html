@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ternary</title>
+</head>
+<body>
+    <div class="result"></div>
+    <script>
+        let kintamasis = true;
+
+        let reiksme = kintamasis ? 'Labas' : 'Pasauli';
+
+        console.log(reiksme);
+
+        kintamasis = false;
+
+        reiksme = kintamasis && 'Labas';
+
+        console.log(reiksme);
+
+        document.querySelector('.result').innerHTML = kintamasis && 'Labas';
+    </script>
+</body>
+</html>

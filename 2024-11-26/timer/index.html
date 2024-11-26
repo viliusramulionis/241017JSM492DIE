@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laikmatis</title>
+</head>
+<body>
+    <div class="result"></div>
+    <script>
+        let hours = 0;
+        let minutes = 0;
+        let seconds = 10;
+
+        // document.querySelector('.result').innerHTML = `${minutes}:${seconds}`;
+
+        let intervalas = setInterval(() => {
+            if(seconds === 0) {
+                if(minutes === 0) {
+                    if(hours === 0) {
+                        clearInterval(intervalas);
+                    } else {
+                        hours--;
+                        minutes = 59;
+                        seconds = 59;
+                    }
+                } else {
+                    minutes--;
+                    seconds = 59;
+                }
+            } else {
+                seconds--;
+            }
+
+            // Ternary operatoriaus panaudojimas
+            // let kintamasis = 10 === 11 ? 'Hello' : 'World';
+            //               Sąlyga       True      False (else)  
+            // console.log(kintamasis);
+
+            // let displayHours = hours.toString().length === 1 ? "0" + hours : hours;
+
+            // let displayHours = hours;
+
+            // if(hours.toString().length === 1) {
+            //     let displayHours = "0" + hours;
+            // } 
+
+            if(hours > 0) {
+                document.querySelector('.result').innerHTML = `
+                    ${hours.toString().length === 1 ? "0" + hours : hours} :
+                    ${minutes.toString().length === 1 ? "0" + minutes : minutes} :
+                    ${seconds.toString().length === 1 ? "0" + seconds : seconds}
+                `;
+            } else {
+                document.querySelector('.result').innerHTML = `
+                    ${minutes.toString().length === 1 ? "0" + minutes : minutes} :
+                    ${seconds.toString().length === 1 ? "0" + seconds : seconds}
+                `;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
