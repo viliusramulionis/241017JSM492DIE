@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+    <style>
+        .game {
+            background-color: #9b8a7c;
+            width: 800px;
+            height: 800px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            column-gap: 20px;
+            row-gap: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .game div {
+            /* width: 200px; */
+            /* height: 200px; */
+            background-color: #6e5e50;
+            font-size: 54px;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .game div.number2 {
+            background-color: #ede3d9;
+            color: #756452;
+        }
+
+        .game div.number4 {
+            background-color: #ead7b5;
+            color: #756452;
+        }
+
+        .game div.number8 {
+            background-color: #f1b077;
+            color: #fefefe;
+        }
+
+        .game div.number16 {
+            background-color: #f59260;
+            color: #fefefe;
+        }
+
+        .game div.number32 {
+            background-color: #f57d60;
+            color: #fefefe;
+        }
+
+        .game div.number64 {
+            background-color: #f66544;
+            color: #fefefe;
+        }
+    </style>
+</head>
+<body>
+    <div class="game"></div>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        const exponents = [0, 2, 4, 8, 16, 32, 64];
+                  
+        for(let i = 0; i < 16; i++) {
+            const number = exponents[random(0, exponents.length - 1)];
+            const el = document.querySelector('.game');
+
+            el.innerHTML += number === 0 ? `<div></div>` : `<div class="number${number}">${number}</div>`;
+        }
+    </script>
+</body>
+</html>
