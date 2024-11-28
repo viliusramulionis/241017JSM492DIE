@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Įvykiai</title>
+</head>
+<body>
+    <!-- Atributai kurie prasideda žodžiu on žymi įvykį -->
+    <!-- click paspaudimo įvykis -->
+    <button onclick="console.log('Pasisveikinimas')">Paspausk Mane</button>
+    <button onclick="console.log('Pasisveikinimas'); console.log('Hello World')">Paspausk Mane</button>
+    <button class="raudonas-fonas">Raudonas fonas</button>
+    <button class="juodas-fonas">Juodas fonas</button>
+    <button class="fono-kaitaliojimas">Atsitiktinis fonas</button>
+    <button class="padidinti-mygtuka">Paspausk Mane</button>
+    <button class="paspaudimas">Paspausk Mane</button>
+    <button onclick="paspaudimoIvykis()">Paspausk Mane</button>
+
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // addEventListener metodas gali būti priskirtas prie bet kurio elemento
+        // pirmas parametras nurodo įvykį (on raktažodis nerašomas)
+        // antras parametras funkcija kurią norėtume atlikti
+        document.querySelector('.raudonas-fonas').addEventListener('click', () => {
+            document.querySelector('body').style.backgroundColor = 'red';
+        });
+
+        document.querySelector('.juodas-fonas').addEventListener('click', () => {
+            document.querySelector('body').style.backgroundColor = 'black';
+        });
+
+        document.querySelector('.fono-kaitaliojimas').addEventListener('click', () => {
+            document.querySelector('body').style.backgroundColor = `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
+        });
+
+        // Trečias būdas priskirti įvykį
+        document.querySelector('.padidinti-mygtuka').onclick = () => {
+            document.querySelector('.padidinti-mygtuka').style.fontSize = '22px';
+        }
+
+        function paspaudimoIvykis() {
+            console.log('Paspaudimas užregistruotas');
+        }
+
+        document.querySelector('.paspaudimas').onclick = paspaudimoIvykis;
+        // document.querySelector('.paspaudimas').addEventListener('click', paspaudimoIvykis);
+
+
+
+    </script>   
+</body>
+</html>

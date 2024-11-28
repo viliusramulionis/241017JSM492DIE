@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kryziukai - nuliukai</title>
+    <style>
+        ul {
+            list-style: none;
+            display: grid;
+            margin: 0;
+            padding: 0;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            width: 400px;
+            height: 400px;
+            margin: 50px auto;
+        }
+
+        li {
+            font-size: 54px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <ul></ul>
+    <script>
+       function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        const data = [];
+
+        let x = true;
+
+        
+        function generateSymbol() {
+            let position = random(0, 8); 
+        
+            if(!data[position]) {
+                if(x) {
+                    data[position] = 'x';
+                    x = false;
+                } else {
+                    data[position] = '0';
+                    x = true;
+                }
+            } else {
+                generateSymbol();
+            }
+        }
+
+        // for(let i = 0; i < 9; i++) {
+        //     let notPlaced = true;
+
+        //     while(notPlaced) {
+        //         let position = random(0, 8);
+
+        //         if(!data[position]) {
+        //             if(x) {
+        //                 data[position] = 'x';
+        //                 x = false;
+        //             } else {
+        //                 data[position] = '0';
+        //                 x = true;
+        //             }
+        //             notPlaced = false;
+        //         }
+        //     }
+        // }
+
+        for(let i = 0; i < 9; i++) {
+            generateSymbol()
+        }
+        
+        for(const value of data) {
+            document.querySelector('ul').innerHTML += `<li>${value}</li>`;
+        }
+
+
+        const winningPos = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8], 
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+
+        for(const pos of winningPos) {
+            if( 
+                data[pos[0]] === data[pos[1]] && 
+                data[pos[1]] === data[pos[2]]
+            ) {
+                console.log('Laimėtojas yra: ' + data[pos[0]]);
+                break;
+            }
+        }
+
+
+    </script>
+</body>
+</html>

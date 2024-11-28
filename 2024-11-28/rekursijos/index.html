@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekursijos</title>
+</head>
+<body>
+    <script>
+        // Ciklai yra dviejų rušių:
+        // Iteraciniai (for, while, for in, for of)
+        // Rekursiniai (funkcijos)
+
+        function spausdintuvas(skaicius) { 
+            console.log(skaicius); 
+            
+            if(skaicius > 0) 
+                spausdintuvas(skaicius - 1);
+
+            console.log('Funkcijos pabaiga');
+        }
+
+        spausdintuvas(9);
+    </script>
+</body>
+</html>

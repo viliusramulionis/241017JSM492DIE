@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mygtukai</title>
+</head>
+<body>
+    <div>15</div>
+    <button onclick="getNumber(event)">1</button>
+    <button onclick="getNumber(event)">2</button>
+    <button onclick="getNumber(event)">3</button>
+
+    <script>
+        // console.log(document.querySelector('span').innerText);
+        console.log(document.querySelector('div').textContent);
+
+        function getNumber(e) {    
+            let value = parseInt(document.querySelector('div').textContent);
+            
+            // console.log(value + +e.target.textContent);
+
+            document.querySelector('div').textContent = value + parseInt(e.target.textContent)
+        }
+    </script>
+</body>
+</html>
