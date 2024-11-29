@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructors</title>
+</head>
+<body>
+    <script>
+        const vardai = { 
+            jonas: "Jonaitis", 
+            petras: "Petraitis" 
+            // ...
+        }
+
+        console.log(vardai.jonas, vardai.petras)
+
+        // const jonas = vardai.jonas;
+        // const petras = vardai.petras;
+
+        // console.log(jonas, petras);
+
+        const { jonas, petras } = vardai;
+        
+        console.log(jonas, petras);
+
+        const masyvas = [22, 35, 58, 18, 24];
+
+        console.log(masyvas[0], masyvas[1], masyvas[2]);
+        
+        // const jonoAmzius = masyvas[0];
+        // const petroAmzius = masyvas[1];
+        // const kazioAmzius = masyvas[2];
+
+        // console.log(jonoAmzius, petroAmzius, kazioAmzius);
+
+        const [ jonoAmzius, petroAmzius, kazioAmzius ] = masyvas;
+
+        console.log(jonoAmzius, petroAmzius, kazioAmzius);
+    </script>
+</body>
+</html>

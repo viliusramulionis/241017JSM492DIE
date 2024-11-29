@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprendimai</title>
+</head>
+<body>
+    <button onclick="changeBgColor(event)">purple</button>
+    <button onclick="increaseNumber(event)">1</button>
+    <div class="box" onclick="changePosition(event)"></div>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // Sukurkite mygtuką kuriame įrašykite spalvos pavadinimą, o ant jo paspaudus, 
+        // puslapio fono spalva pasikeistų į tokią kurią jame parašėte.
+
+        function changeBgColor(ivykis) {
+            document.querySelector('body').style.backgroundColor = ivykis.target.textContent;
+        }
+
+        // Sukurkite mygtuką kuriame įrašykite skaičių 1. Paspaudus ant mygtuko, 
+        // šis skaičius turėtų padidėti +1.
+
+        function increaseNumber(ivykis) {
+            ivykis.target.textContent++
+        }
+
+        // Sukurkite div elementą kurį atvaizduokite puslapyje kaip 
+        // kvadratą absoliučioje padėtyje. Paspaudus ant kvadrato 
+        // šis turėtų atsidurti atsitiktinėje pozicijoje.
+
+        const box = document.querySelector('.box');
+        box.style.position = 'absolute';
+        box.style.width = '300px';
+        box.style.height = '300px';
+        box.style.backgroundColor = 'orange';
+
+        function changePosition(ivykis) {
+            ivykis.target.style.top = random(0, window.innerHeight - 300) + "px";
+            ivykis.target.style.left = random(0, window.innerWidth - 300) + "px";
+        }
+    </script>
+</body>
+</html>
