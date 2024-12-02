@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kryziukai nuliukai</title>
+    <style>
+        .zaidimas {
+            width: 800px;
+            height: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .zaidimas button {
+            font-size: 54px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="start(event)">Pradėti</button>
+    <div class="zaidimas"></div>
+    <h2 class="rezultatas"></h2>
+    <script>
+        const zaidimas = document.querySelector('.zaidimas');
+
+        let ended = false;
+        let x = true;
+
+        function start(e) {
+            // Išvalome visus prieš tai buvusius mygtukus
+            zaidimas.innerHTML = '';
+
+            // Sugeneruojame naujus mygtukus:
+            for(let i = 0; i < 9; i++) {
+                zaidimas.innerHTML += `<button onclick="handleClick(event)"></button>`;
+            }
+            // const data = document.querySelectorAll('.zaidimas button');
+
+            // // forEach metodas nieko negražina, skirtas iteruoti per elementų sąrašą
+            // data.forEach((el) => {
+            //     el.textContent = '';
+            // });
+
+            ended = false;
+            x = true;
+
+            document.querySelector('.rezultatas').textContent = '';
+
+            e.target.textContent = 'Iš naujo';
+        }
+
+        function handleClick(e) {
+            if(ended) 
+                return;
+
+            if(e.target.textContent !== '') 
+                return;
+
+            if(x) {
+                e.target.textContent = 'x';
+                x = false;
+            } else {
+                e.target.textContent = '0';
+                x = true;
+            }
+
+            const data = document.querySelectorAll('.zaidimas button');
+
+            const winningPos = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8], 
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8],
+                [0, 4, 8],
+                [2, 4, 6]
+            ];
+
+            for(const pos of winningPos) { 
+                if( 
+                    data[pos[0]].textContent !== '' &&
+                    data[pos[0]].textContent === data[pos[1]].textContent && 
+                    data[pos[1]].textContent === data[pos[2]].textContent
+                ) {
+                    document.querySelector('.rezultatas').innerHTML = 'Laimėtojas yra: ' + data[pos[0]].textContent;
+                    ended = true;
+
+                    return;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

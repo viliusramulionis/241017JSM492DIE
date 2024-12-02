@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teleloto</title>
+    <style>
+        .kamuoliukai {
+            margin-bottom: 30px;
+            display: flex;
+            padding: 3rem;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .kamuoliukai div {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 30px;
+            color: white;
+        }
+
+        .kamuoliukai div.red {
+            background-color: red;
+        }
+
+        .kamuoliukai div.yellow {
+            background-color: yellow;
+            color: black;
+        }
+
+        .kamuoliukai div.blue {
+            background-color: blue;
+        }
+
+        .kamuoliukai div.green {
+            background-color: green;
+        }
+
+        .button {
+            background-color: rgb(116, 185, 255);
+            margin: 0 auto;
+            border: none;
+            display: block;
+            width: fit-content;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="zaidimas">
+        <div class="kamuoliukai"></div>
+        <button onclick="rollBall(event)" class="button">Ridenti</button>
+    </div>
+    <script>
+        const laimingas = random(0, 100);
+        // let baigta = false;
+
+
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        function rollBall(e) {
+            // if(baigta)
+            //     return;
+
+            const kamuoliukai = document.querySelector('.kamuoliukai');
+            const skaicius = random(0, 100);
+
+            if(skaicius >= 20 && skaicius <= 39) {
+                kamuoliukai.innerHTML += `<div class="yellow">${skaicius}</div>`;
+            } else if(skaicius >= 40 && skaicius <= 59) {
+                kamuoliukai.innerHTML += `<div class="red">${skaicius}</div>`;
+            } else if(skaicius >= 60 && skaicius <= 79) {
+                kamuoliukai.innerHTML += `<div class="blue">${skaicius}</div>`;
+            } else if(skaicius >= 80 && skaicius <= 100) {
+                kamuoliukai.innerHTML += `<div class="green">${skaicius}</div>`;
+            } else {
+                kamuoliukai.innerHTML += `<div>${skaicius}</div>`;
+            }
+            
+            if(laimingas === skaicius) {
+                e.target.setAttribute('disabled', true);
+                e.target.parentElement.innerHTML += "<h1>SKAMBUTIS!</h1>";
+                // baigta = true;     
+            }
+        }
+    </script>   
+</body>
+</html>

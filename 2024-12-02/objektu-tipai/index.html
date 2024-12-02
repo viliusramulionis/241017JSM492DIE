@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objektu tipai</title>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        let stringas = 'LABAS';
+
+        console.log(typeof stringas);
+
+        let pirmas = 'labas';
+        let antras = 'labas';
+
+        if(pirmas === antras) {
+            console.log('Stringai lygus');
+        }
+
+        pirmas = {
+            zodis: 'labas'
+        }
+
+        antras = {
+            zodis: 'labas'
+        }
+
+        if(pirmas === antras) {
+            console.log('Objektai yra vienodi');
+        }
+
+        const masyvas = [10, 20, 30];
+
+        console.log(masyvas);
+
+        const objektas = {
+            pirmas : 10,
+            antras : 20,
+            trecias : 30
+        };
+
+        console.log(objektas);
+
+        console.log(masyvas[1]);
+
+        console.log(objektas.antras);
+
+        const indeksas = 2;
+
+        console.log(masyvas[indeksas]);
+
+        const raktazodis = 'trecias';
+
+        console.log(objektas[raktazodis]);
+
+        console.log(objektas['pirmas']);
+
+        const naujasStringas = 'Labas rytas';
+        
+        console.log(naujasStringas[1]);
+
+        console.log(document.querySelectorAll('ul li'));
+    </script>
+</body>
+</html>
