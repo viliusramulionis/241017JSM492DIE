@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of games</title>
+    <style>
+        .gamepanel {
+            display: flex;
+            margin: 0 auto; 
+            width:fit-content;
+            border: 3px solid black;
+        }
+        .stats {
+            width: 400px;
+            padding: 3rem;
+        }
+        .game {
+            width: 1000px;
+            height: 700px;
+            background-color: black;
+            position: relative;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+        }
+
+        button {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: brown;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="gamepanel">
+        <div class="stats"></div>
+        <div class="game">
+            <div class="box" onclick="handleClick()"></div>
+            <button onclick="start(event)">Pradėti</button>
+        </div>
+    </div>
+    <script>
+        const box = document.querySelector('.box');
+        const game = document.querySelector('.game');
+        const stats = document.querySelector('.stats');
+
+        const gW = game.offsetWidth;
+        const gH = game.offsetHeight;
+        const bW = box.offsetWidth;
+        const bH = box.offsetHeight;
+
+        let pP = 0;
+        let cP = 0;
+        let totalPP = 0;
+        let totalCP = 0;
+        let clicked = false;
+        let timer = 30; 
+        let totalTime = timer;
+        let rounds = 10;
+        let currentRound = 1;
+
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+        
+        function handleClick() {
+            if(clicked)
+                return;
+            
+            pP++;
+            clicked = true;
+        }
+
+        function start(e) {
+            e.target.style.display = 'none';
+
+            const gameInterval = setInterval(() => {
+                if(currentRound > rounds) {
+                    clearInterval(gameInterval);
+                    console.log('Žaidimas baigtas');
+                    if(totalPP > totalCP) {
+                        console.log(`Žaidimą laimėjo žaidėjas, laimėjęs ${totalPP} roundus`);
+                        stats.innerHTML += `<h3>Žaidimą laimėjo žaidėjas, laimėjęs ${totalPP} roundus</h3>`;
+                    } else if(totalPP === totalCP) {
+                        console.log('Žaidimas baigėsi lygiosiomis');
+                        stats.innerHTML += `<h3>Žaidimas baigėsi lygiosiomis</h3>`;
+                    } else {
+                        console.log(`Žaidimą laimėjo kompiuteris, laimėjęs ${totalCP} roundus`);
+                        stats.innerHTML += `<h3>Žaidimą laimėjo kompiuteris, laimėjęs ${totalCP} roundus</h3>`;
+                    }
+                    return;
+                }
+
+                if(!clicked && timer !== totalTime) {
+                    cP++;
+                }
+
+                box.style.top = `${random(0, gH - bH)}px`;
+                box.style.left = `${random(0, gW - bW)}px`;
+                box.style.backgroundColor = `rgb(${random(100, 255)}, ${random(100, 255)}, ${random(100, 255)})`;
+                console.log(pP, cP, timer);
+                
+                if(timer === 0) {
+                    // Roundo užbaigimas
+                    currentRound++;
+                    timer = totalTime;
+
+                    if(pP > cP) {
+                        console.log(`Roundą laimėjo žaidėjas, surinkęs ${pP} taškus`);
+                        stats.innerHTML += `<div>Roundą laimėjo žaidėjas, surinkęs ${pP} taškus</div>`;
+                        totalPP++;
+                    } else if(pP === cP) {
+                        console.log('Įvyko lygiosios');
+                        stats.innerHTML += `<div>Įvyko lygiosios</div>`;
+                    } else {
+                        console.log(`Roundą laimėjo kompiuteris, surinkęs ${cP} taškus`);
+                        stats.innerHTML += `<div>Roundą laimėjo kompiuteris, surinkęs ${cP} taškus</div>`;
+                        totalCP++;
+                    }
+
+                    pP = 0;
+                    cP = 0;
+                } else {
+                    timer--;
+                }
+                
+                clicked = false;
+            }, 1000);
+
+        }
+
+
+    </script>
+</body>
+</html>
