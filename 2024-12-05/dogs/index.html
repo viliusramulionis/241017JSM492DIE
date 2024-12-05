@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dogs</title>
+</head>
+<body>
+    <div class="rezultatas"></div>
+    <script>
+        fetch('https://dog.ceo/api/breeds/image/random')
+        // .json() metodas po užklausos konvertuoja stringą į objektą
+        .then(resp => resp.json())
+        // Galutinio atsakymo susigrąžinimas
+        .then(resp => {
+            document.querySelector('.rezultatas').innerHTML = `<img src="${resp.message}" />`;
+        });
+
+        // https://dog.ceo/dog-api/breeds-list
+
+        // https://dog.ceo/api/breed/african/images/random
+        // https://dog.ceo/api/breed/[ivestas tekstas]/images/random
+        
+        // JEIGU VEISLES PAVADINIMAS IS DVIEJU ZODZIU:
+        // https://dog.ceo/api/breed/australian/kelpie/images/random
+    </script>
+</body>
+</html>

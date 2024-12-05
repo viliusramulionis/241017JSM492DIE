@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+</head>
+<body>
+    <script>
+        // console.log('A');
+        // // Funkcija fetch skirta informacijos paėmimui
+        // // Asinchroninis veiksmas:
+        // fetch('https://raw.githubusercontent.com/viliusramulionis/241017JSM492DIE/refs/heads/main/README.md')
+        // // Metodas text konvertuoja grąžintą turinį į tekstinį stringą
+        // .then(atsakymas => atsakymas.text())
+        // .then(atsakymas => console.log('B'))
+
+        // console.log('C');
+
+        fetch('https://raw.githubusercontent.com/viliusramulionis/241017JSM492DIE/refs/heads/main/README.md')
+        .then(atsakymas => atsakymas.text())
+        .then(atsakymas => {
+            const data = atsakymas.split('\n').filter(value => value !== '')
+            
+            for(let i = 5; i <= 10; i++) {
+                console.log(data[i].split('|')[0].trim());
+            }
+        });
+
+        // JSON stringo formavimas:
+        const json = `[
+            {   
+                "pavadinimas" : "reiksme",
+                "kaina" : 14.99,
+                "parduotas" : false
+            }
+        ]`;
+
+        // Konvertuoja JSON stringą į objektą
+        console.log(JSON.parse(json));
+
+        const produktai = [
+            {
+                pavadinimas: "reiksme",
+                kaina: 14.99,
+                parduotas: false
+            }
+        ];
+
+        // KOnvertuoja objektą į JSON stringą
+        console.log(JSON.stringify(produktai));
+
+    </script>
+</body>
+</html>
