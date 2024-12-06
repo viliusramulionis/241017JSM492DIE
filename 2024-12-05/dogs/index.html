@@ -7,6 +7,11 @@
 </head>
 <body>
     <div class="rezultatas"></div>
+    <select onchange="pasirinkimas(event)">
+        <option>Pirmas</option>
+        <option>Antras</option>
+        <option>Trecias</option>
+    </select>
     <script>
         fetch('https://dog.ceo/api/breeds/image/random')
         // .json() metodas po užklausos konvertuoja stringą į objektą
@@ -23,6 +28,10 @@
         
         // JEIGU VEISLES PAVADINIMAS IS DVIEJU ZODZIU:
         // https://dog.ceo/api/breed/australian/kelpie/images/random
+
+        function pasirinkimas(e) {
+            console.log(e.target.value);
+        }
     </script>
 </body>
 </html>
