@@ -57,7 +57,7 @@ const produktai = document.querySelector('.produktai');
 const krepselis = document.querySelector('.krepselis');
 const krepselioProduktaiDiv = document.querySelector('.krepselio-produktai');
 
-const krepselioProduktai = [];
+let krepselioProduktai = [];
 
 function addToCart(e, id, photo, title, price) {
     e.preventDefault();
@@ -96,29 +96,44 @@ function addToCart(e, id, photo, title, price) {
     //     `;
     // }
 
-    krepselioProduktaiDiv.innerHTML = krepselioProduktai.map(produktas => `
-            <div class="row">
-                <div class="col">
-                    <img src="${produktas.photo}">
-                </div>
-                <div class="col">
-                    ${produktas.title}
-                </div>
-                <div class="col">
-                    <input type="number" value="${produktas.qty}">
-                </div>
-                <div class="col">
-                    $${produktas.price}
-                </div>
+    renderCart()
+}
+
+function renderCart() {
+    krepselioProduktaiDiv.innerHTML = krepselioProduktai.map((produktas, index) => `
+        <div class="row">
+            <div class="col">
+                <img src="${produktas.photo}">
             </div>
-        `).join('');
+            <div class="col">
+                ${produktas.title}
+            </div>
+            <div class="col">
+                <input type="number" value="${produktas.qty}">
+            </div>
+            <div class="col">
+                $${parseFloat(produktas.price).toFixed(2)}
+            </div>
+            <div class="col">
+                <button class="btn btn-danger" onclick="handleDelete(event, ${produktas.id})">Delete</button>
+            </div>
+        </div>
+    `).join('');
 
     document.querySelector('.items-count').textContent = `${krepselioProduktai.length} items`;
 }
 
 function backToProductList(e) {
-    e. preventDefault();
+    e.preventDefault();
 
     produktai.style.display = 'block';
     krepselis.style.display = 'none';
+}
+
+function handleDelete(e, id) {
+    const index = krepselioProduktai.findIndex(value => value.id === id)
+    // krepselioProduktai = krepselioProduktai.filter(value => value.id !== id)
+    krepselioProduktai.splice(index, 1);
+
+    renderCart();
 }

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palaukimai</title>
+</head>
+<body>
+    <div class="result"></div>
+    <script>
+        // Callback Hell
+        // fetch('https://pirmaspuslapis.lt')
+        // .then(resp => resp.json())
+        // .then(adresasA => {
+        //     // adresasA = naujas adresas
+        //     fetch(adresasA)
+        //     .then(resp => resp.json())
+        //     .then(adresasB => {
+        //         fetch(adresasB)
+        //         .then(resp => resp.json())
+        //         .then(adresasC => {
+        //             fetch(adresasC)
+        //             .then(resp => resp.json())
+        //             .then(adresasD => {
+        //                 fetch(adresasD)
+        //                 .then(resp => resp.json())
+        //                 .then(atsakymas => {
+        //                     console.log(atsakymas)
+        //                 })
+        //             })  
+        //         })
+        //     });
+        // });
+
+        // console.log('A');
+
+        // fetch('https://dog.ceo/api/breeds/list/all')
+        // .then(resp => resp.json())
+        // .then(resp => console.log('B'))
+
+        // console.log('C');
+
+        async function krovimas() { 
+            console.log('A')
+            let A = await fetch('https://dog.ceo/api/breeds/list/all');
+            console.log('B')
+            console.log(await A.json());
+            console.log('C')
+        }
+
+        // krovimas();
+
+
+        fetch('https://dog.ceo/api/breeds/list/all')
+        .then(resp => resp.json())
+        .then(resp => {
+            // for(const breed in resp.message) {
+            //     console.log(breed);
+            // }
+            const result = document.querySelector('.result');
+
+            result.innerHTML = Object.keys(resp.message).map(veisle => `<li>${veisle}</li>`);
+
+            document.querySelectorAll('li').forEach(el => 
+            el.addEventListener('click', () => {
+                console.log('Paspausta');
+            }));
+        });
+
+
+
+    </script>
+</body>
+</html>

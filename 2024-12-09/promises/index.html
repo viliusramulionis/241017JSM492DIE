@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // fetch('https://dog.ceo/api/breeds/list/all')
+        // // Nurodymas kas turėtų nutikti kai duomenys bus gauti
+        // .then(resp => resp.json())
+        // .then(resp => console.log(resp))
+        // // Nurodymas kas turėtų įvykti jei nepavyko įgyvendinti užklausos
+        // .catch(err => console.log(err))
+        // // Nurodome kas turėtų įvykti bet kuriuo atveju, nesvarbu ar užklausa pavyko ar ne
+        // .finally(() => console.log('Krovimas baigėsi'))
+
+        // const customFetch = (successFunction, failedFunction) => { 
+        //     setTimeout(() => {
+        //         if(random(0,1) === 0) {
+        //             // Pavyko
+        //             successFunction();
+        //         } else {
+        //             // Krovimas nepavyko
+        //             failedFunction();
+        //         }
+        //     }, random(10, 5000))
+        // }
+
+        // function successFunction() {
+        //     // Veiksmai kurie bus atlikti po sėkmingo krovimo
+        //     console.log('Loading was successful')
+        // }
+
+        // function failedFunction() {
+        //     console.log('Loading failed')
+        // }
+
+        // customFetch(successFunction, failedFunction);
+
+        const pazadas = new Promise((onresolve, onreject) => {
+            setTimeout(() => {
+                if(random(0,1) === 0) {
+                    // Pavyko
+                    onresolve('Krovimas sėkmingai baigtas');
+                } else {
+                    // Krovimas nepavyko
+                    onreject('Krovimas nesekmingas');
+                }
+            }, random(10, 5000))
+        });
+
+        pazadas
+        .then((resp) => console.log(resp))
+        .catch((err) => console.log(err));
+    </script>
+</body>
+</html>
