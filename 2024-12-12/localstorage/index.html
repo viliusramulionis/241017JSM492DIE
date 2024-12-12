@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage</title>
+</head>
+<body>
+    <script>
+        // Globalus objektas skirtas modifikuoti ir paimti localStorage informaciją
+        // Išvalo lokalų podėlį:
+        // localStorage.clear()
+
+        // Paima norimą reikšmę iš podėlio
+        // localStorage.getItem()
+
+        // Grąžina lokalaus podėlio informacijos ilgį
+        // localStorage.length
+
+        // Panaikina vieną elementą iš lokalaus podėlio
+        // localStorage.removeItem()
+
+        // Patalpina norimą reikšmę lokaliame podėlyje:
+        // localStorage.setItem()
+        
+        console.log(localStorage.getItem('labas'));
+
+        localStorage.setItem('labas', 'visuomene');
+
+        console.log(localStorage.getItem('labas'));
+
+        // const data = [
+        //     "Pirmas", "Antras", "Trecias"
+        // ];
+
+        const data = [
+            {
+                id: 1,
+                pavadinimas: "Pirmas"
+            },
+            {
+                id: 2,
+                pavadinimas: "Antras"
+            },
+            {
+                id: 3,
+                pavadinimas: "Trecias"
+            }
+        ];
+
+        // Talpinant informaciją užšifruojame ją į JSON formatą 
+        localStorage.setItem('data', JSON.stringify(data));
+
+        // Susigrąžinant iššifruojam atgal:
+        console.log(JSON.parse(localStorage.getItem('data')));
+
+    </script>
+</body>
+</html>
