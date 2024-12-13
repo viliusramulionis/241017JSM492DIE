@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pointer Events</title>
+    <style>
+        button {
+            /* Išjungiame visus JS įvykius */
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="paspausta()">Paspausk Mane</button>
+    <script>
+        function paspausta() {
+            console.log('Veikia');
+        }
+    </script>
+</body>
+</html>
