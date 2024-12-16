@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klasės</title>
+</head>
+<body>
+    <script>
+        // Klasė yra objekto šablonas
+        class Automobilis {
+            // Klasė gali turėti savyje priskirtas reikšmes kurios vadinamos savybėmis (properties)
+            variklis = 'elektrinis'
+
+            // funkcijos objektiniame programavime (klasėse) yra vadinamos metodais
+            // Metodo pavyzdys:
+            galia() {
+                return 'Galinga'
+            }
+
+            // Kontruktorius yra metodas kuris paleidžiamas pagal nutylėjimą vos tik iššaukiama klasė panaudojant raktažodį "new"
+            constructor(tipas) {
+                if(tipas)
+                    this.variklis = tipas;
+            }
+        }   
+
+        console.log(new Automobilis('benzinas'));
+        console.log(new Automobilis('dyzelis'));
+        console.log(new Automobilis());
+
+        class Studentas {
+            constructor(vardas, pavarde, gimimoMetai) {
+                this.vardas = vardas;
+                this.pavarde = pavarde;
+                this.gimimoMetai = gimimoMetai;
+            }
+
+            studentoDuomenys() {
+                console.log(`Studentas, ${this.vardas} ${this.pavarde}, gimęs ${this.gimimoMetai}`);
+            }
+        }
+
+        // const objektas = {
+        //     vardas: 'Jonas',
+        //     pavarde: 'Jonaitis',
+        //     gimimoMetai: 1980,
+        //     studentoDuomenys() {
+        //         console.log(`Studentas, ${this.vardas} ${this.pavarde}, gimęs ${this.gimimoMetai}`);
+        //     }
+        // }
+
+        // const objektas2 = {
+        //     vardas: 'Petras',
+        //     pavarde: 'Jonaitis',
+        //     gimimoMetai: 1980,
+        //     studentoDuomenys() {
+        //         console.log(`Studentas, ${this.vardas} ${this.pavarde}, gimęs ${this.gimimoMetai}`);
+        //     }
+        // }
+
+        const pirmasStudentas = new Studentas('Jonas', 'Jonaitis', 1980);
+        const antrasStudentas = new Studentas('Petras', 'Petraitis', 1994);
+
+        pirmasStudentas.studentoDuomenys()
+        antrasStudentas.studentoDuomenys()
+
+
+        // {
+        //     description: "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.",
+        //     discountPercentage: 5.5,
+        //     id: 2,
+        //     price: 19.99,
+        //     rating: 3.28,
+        //     title: 'Eyeshadow Palette with Mirror'
+        // },
+
+        
+
+        class Produktas {
+            constructor(title, description, price, discountPercentage, rating) {
+                this.title = title;
+                this.description = description;
+                this.price = price;
+                this.discountPercentage = discountPercentage;
+                this.rating = rating;
+            }
+            
+            // GET'eris
+            getSpecialPrice() {
+                return (this.price - (this.price / 100 * this.discountPercentage)).toFixed(2);
+            }
+
+            getRatingPercentage() {
+                return this.rating * 2 * 10;
+            }
+
+            // SET'eris
+            setPrice(price) {
+                this.price = price;
+            }
+         }
+
+         const produktai = [
+            new Produktas(
+                "Eyeshadow Palette with Mirror", 
+                "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.",
+                19.99,
+                8.2,
+                3.28
+            ),
+            new Produktas(
+                "Velvet Touch", 
+                "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.",
+                12.99,
+                5.5,
+                4.28
+            ),
+            new Produktas(
+                "Chic Cosmetics", 
+                "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.",
+                8.99,
+                2.51,
+                3.28
+            ),
+            new Produktas(
+                "Nail Couture", 
+                "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.",
+                15.99,
+                5.2,
+                4.85
+            ),
+        ];
+
+        console.log(produktai[0].getSpecialPrice()); 
+        console.log(produktai[0].getRatingPercentage()); 
+
+        produktai[0].setPrice(55.88);
+
+        console.log(produktai[0].getSpecialPrice()); 
+
+        console.log(produktai);
+
+        console.log('Antro produkto kaina:', produktai[1].getSpecialPrice())
+        console.log('Trecio produkto kaina:', produktai[2].getSpecialPrice())
+        console.log('Ketvirto produkto kaina:', produktai[3].getSpecialPrice())
+        
+        console.log(produktai[3].description)
+
+        function Gamintojas(salis) {
+            this.salis = salis;
+
+            function getSalis() {
+                return this.salis;
+            }
+        }
+
+        console.log(new Gamintojas('Kinija'));
+        console.log(new Gamintojas('Anglija').salis);
+    </script> 
+</body>
+</html>
