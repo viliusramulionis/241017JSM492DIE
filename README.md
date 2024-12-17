@@ -41,7 +41,7 @@ C:\Users\viliu\Desktop\testine-repozitorija - Absoliutus kelias
 
 cd - (Change Directory) Komanda kuri norodo esamos direktorijos pakeitimą
 
-  
+ctrl + c - Nutraukia terminale paleistos programos veikimą
   
 
 echo "# testine-repozitorija" >> README.md - Sukuria failą pavadinimu README.md ir jame patalpina tekstą "# testine-repozitorija"
