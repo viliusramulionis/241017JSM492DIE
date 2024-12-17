@@ -73,3 +73,16 @@ git add .
 git commit -m "update message"
 
 git push
+
+# NodeJS aplikacijos kūrimas
+Sukuria package.json failą:
+npm init 
+
+Atlieka tą patį tik su automatiniu užpildymu:
+npm init -y 
+
+Norint paleisti programą:
+node failopavadinimas.js  
+
+Jeigu failas vadinasi index.js
+node .
