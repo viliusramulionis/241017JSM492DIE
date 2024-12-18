@@ -2,9 +2,11 @@
 # Repozitorijos klonavimas
 
 Klonuoja repozitoriją:
+
     git clone REPOZITORIJOS_ADRESAS
 
 Atsiunčia rezitorijos atnaujinimus:
+
     git pull 
 
 # Klavišų kombinacijos VSCode:
