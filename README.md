@@ -86,3 +86,22 @@ node failopavadinimas.js
 
 Jeigu failas vadinasi index.js
 node .
+
+# React aplikacijos kūrimas
+npm create vite@latest
+
+Įvedame projekto pavadinimą
+Pasirenkame React
+Tuomet Javascript
+
+Aplikacijos paleidimas:
+npm run dev
+
+Aplikacijos struktūra:
+./src
+    main.jsx - Pagrindinis failas
+    App.jsx - Pagrindinis modifikuojamas failas
+    components - Komponentų direktorija
+        komponento-pavadinimas - Direktorija kurioje talpinsime komponentą
+            KomponentoPavadinimas.jsx - Komponento failas
+            KomponentoPavadinimas.css - Komponento stilius (esant poreikiui)
