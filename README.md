@@ -1,15 +1,15 @@
 
 # Repozitorijos klonavimas
 
+Klonuoja repozitoriją:
     git clone REPOZITORIJOS_ADRESAS
-Klonuoja repozitoriją
 
+Atsiunčia rezitorijos atnaujinimus:
     git pull 
-Atsiunčia rezitorijos atnaujinimus
 
 # Klavišų kombinacijos VSCode:
 
-WIN             MAC                 VEIKSMAS  
+    WIN             MAC                 VEIKSMAS  
 
     ctrl + s        |   cmd + s         failo išsaugojimas (save) 
 
