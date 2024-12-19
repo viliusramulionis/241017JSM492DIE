@@ -1,0 +1,5 @@
+.second-section {
+    background: url("../../assets/2.jpg") no-repeat center center / cover;
+    min-height: 100vh;
+    color: white;
+}
