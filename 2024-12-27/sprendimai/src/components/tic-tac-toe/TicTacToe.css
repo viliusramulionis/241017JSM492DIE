@@ -1,0 +1,11 @@
+.zaidimas {
+    width: 800px;
+    height: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.zaidimas button {
+    font-size: 54px;
+}
