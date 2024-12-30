@@ -2,25 +2,10 @@ import { useState } from 'react'
 import './TicTacToe.css';
 
 function TicTacToe() {
-    const [buttons, setButtons] = useState()
-    const [ended, setEnded] = useState(false);
+    const [start, setStart] = useState(false)
+    const [winner, setWinner] = useState();
     const [x, setX] = useState(true);
-    console.log('Rendered', x)
-    const start = () => {
-        const data = []
-
-        for(let i = 0; i < 9; i++) {
-            data.push(
-                <button 
-                    key={i} 
-                    onClick={handleClick}
-                ></button>
-            )
-        }
-
-        setButtons(data);
-    }
-
+    
     const handleClick = (e) => {
         if(x) {
             e.target.textContent = 'x';
@@ -29,6 +14,29 @@ function TicTacToe() {
             e.target.textContent = '0';
             setX(true)
         }
+
+        const data = document.querySelectorAll('button');
+
+        const winningPos = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8], 
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+
+        for(const pos of winningPos) { 
+            if( 
+                data[pos[0]].textContent !== '' &&
+                data[pos[0]].textContent === data[pos[1]].textContent && 
+                data[pos[1]].textContent === data[pos[2]].textContent
+            ) {
+                setWinner(data[pos[0]].textContent);
+            }
+        }
     }
 
     return (
@@ -36,11 +44,25 @@ function TicTacToe() {
             <h1>Kryžiukai nuliukai</h1>
             <button 
                 className="btn btn-primary"
-                onClick={start}
+                onClick={() => setStart(true)}
             >Pradėti</button>
-            <div className="zaidimas">
-                {buttons}
-            </div>
+            {!winner && start && 
+                <div className="zaidimas">
+                    <button onClick={handleClick}></button>
+                    <button onClick={handleClick}></button>
+                    <button onClick={handleClick}></button>
+                    <button onClick={handleClick}></button>
+                    <button onClick={handleClick}></button>
+                    <button onClick={handleClick}></button>
+                    <button onClick={handleClick}></button>
+                    <button onClick={handleClick}></button>
+                    <button onClick={handleClick}></button>
+                </div>
+            }
+
+            {winner && 
+                <h2>Laimėtojas yra {winner}</h2>
+            }
             
         </>
     );

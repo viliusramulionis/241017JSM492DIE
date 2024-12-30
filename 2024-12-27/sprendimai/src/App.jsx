@@ -10,9 +10,9 @@ function App() {
   const [krepselis, setKrepselis] = useState([]);
   return (
     <>
-      {/* <Autocomplete />
-      <TicTacToe /> */}
-      <div>{krepselis}</div>
+      <Autocomplete />
+      <TicTacToe />
+
       {!showCart ?
         <Products 
           setKrepselis={setKrepselis} 
