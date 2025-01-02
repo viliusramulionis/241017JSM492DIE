@@ -1,0 +1,32 @@
+.price {
+  font-size: 22px;
+}
+
+.price strong.special {
+  color: red;
+}
+
+.price span {
+  color: gray;
+  text-decoration: line-through;
+}   
+
+.rating {
+  position: relative;
+  width: fit-content;
+}
+
+.rating .active {
+  position: absolute;
+  top: 0;
+  width: 70%;
+  overflow: hidden;
+}
+
+.rating .wrapper {
+  width: max-content;
+}
+
+.krepselis {
+  display: none;
+}
