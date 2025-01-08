@@ -91,6 +91,9 @@ Norint paleisti programą:
 Jeigu failas vadinasi index.js
     node .
 
+Nodemon paketo instaliacija kompiuteryje
+    npm install -g nodemon
+
 # React aplikacijos kūrimas
     npm create vite@latest
 
