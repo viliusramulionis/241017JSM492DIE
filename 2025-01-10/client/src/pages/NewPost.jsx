@@ -22,7 +22,7 @@ const NewPost = () => {
         // })
         // .then(resp => resp.json())
         // .then(resp => console.log(resp));
-
+        
         axios.post('/api', data)
         .then(resp => {
             setAlert({
